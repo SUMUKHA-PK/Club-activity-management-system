@@ -12,9 +12,9 @@
 
 **Objectives:** 
 
-To allow easy storage of large amount of data in a clean, simple manner.
-To be able to make changes to the existing database pertaining to the projects or addition to members in the club.
-Maintain the data in a  proper hierarchical manner in reference to the existing hierarchies in clubs.
+    To allow easy storage of large amount of data in a clean, simple manner.
+    To be able to make changes to the existing database pertaining to the projects or addition to members in the club.
+    Maintain the data in a  proper hierarchical manner in reference to the existing hierarchies in clubs.
 
 **Details about the project:**
 
@@ -30,9 +30,9 @@ of start and end etc.
 
 **Frameworks and tools used:**
 
-MySQL : For maintaining the database, the backend of the web application.
-JavaScript : To encapsulate MySQL and provide a framework.
-jQuery, HTML, CSS : To make the UI beautiful , the frontend of the web application.  
+    MySQL : For maintaining the database, the backend of the web application.
+    JavaScript : To encapsulate MySQL and provide a framework.
+    jQuery, HTML, CSS : To make the UI beautiful , the frontend of the web application.  
 
 
 **Members:**
