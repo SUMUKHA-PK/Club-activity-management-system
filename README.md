@@ -4,9 +4,14 @@
 
 2. The goal is to create a web application that acts as a window for a mysql database beneath.  
 
+**Intended features:**
+1. Easy addition of data through database(button clicks which will trigger commands internally)
+2. Easy install of application (possibly one command like ```build```)
+3. Above install script must create database and setup everything, including hosting the server
+4. 
 **Abstract:** 
 
- ##Aim : 
+ **Aim:** 
      To have a database related to all the information regarding all the Student Clubs existing in NITK , their student members, projects  and the activities .
 
 
