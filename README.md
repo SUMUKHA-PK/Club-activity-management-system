@@ -8,11 +8,12 @@
 1. Easy addition of data through database(button clicks which will trigger commands internally)
 2. Easy install of application (possibly one command like ```build```)
 3. Above install script must create database and setup everything, including hosting the server
-4. 
+
 **Abstract:** 
 
  **Aim:** 
-     To have a database related to all the information regarding all the Student Clubs existing in NITK , their student members, projects  and the activities .
+    To have a database related to all the information regarding all the Student Clubs existing
+    in NITK , their student members, projects  and the activities .
 
 
 **Objectives:** 
@@ -31,7 +32,12 @@
     position/designation in each club. Each entities will have their respective attributes like, for the club 
     entity, the different SIGs(special interest groups), the list of activities done by them like talks, meets,
     workshops, publications etc. The projects will have their attributes as the details of its discipline,time 
-of start and end etc.
+    of start and end etc.
+
+    We also will have a search bar which searches keywords from the projects of the students and
+    retrieves their data. This can be integrated to the main website of NITK where a student can search 
+    for his interests and obtain guidance from the existing students of the university.
+
 
 **Frameworks and tools used:**
 

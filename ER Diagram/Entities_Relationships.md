@@ -14,7 +14,7 @@
 
    **Primary key:** Name 
    
-3. Name of the club , SIGs, Number of people,  Talks conducted, workshops conducted, Flagship Events, Convenor of the Club
+3. Name of the club , SIGs, Number of people,  Talks conducted, workshops conducted, Flagship Events.
 
    **Primary key:** Name of the Club
 
