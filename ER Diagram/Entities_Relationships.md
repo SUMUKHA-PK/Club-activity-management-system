@@ -3,6 +3,7 @@
 1. Students  
 2. Projects  
 3. Clubs  
+4. Group of clubs
 
 **Attributes:**
 
@@ -21,7 +22,7 @@
 **Relationship:**
 
 1. Student **WORKS ON** Project.
-2. Project **BELONGS TO** Club.
-3. Club **SUPERVISES** Project.
-4. Student **MEMBER OF** Club.
+2. Club **BELONGS TO** Group of Clubs.
+3. Group of clubs **MANAGE**s Projects.
+4. Student **BELONGS TO** Group of clubs.
 
