@@ -1,0 +1,168 @@
+mysql> use 16co145
+Database changed
+mysql> CREATE TABLE 16co145 sub(name varchar(8), age number(5), mark1 number(4),  mark2 number(4), mark3 number(4));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sub(name varchar(8), age number(5), mark1 number(4),  mark2 number(4), mark3 num' at line 1
+mysql> CREATE TABLE 16co145 sub(name varchar(8), age int(5), mark1 int(4),  mark2 int(4), mark3 int(4));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sub(name varchar(8), age int(5), mark1 int(4),  mark2 int(4), mark3 int(4))' at line 1
+mysql> CREATE TABLE sub(name varchar(8), age int(5), mark1 int(4),  mark2 int(4), mark3 int(4));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into sub 
+    -> values("abc",19,100,100,100);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into sub
+    -> values("def",20,99,99,99);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into sub values("ghi",21,98,99,99);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into sub values("jkl",21,97,96,91);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into sub values("mno",19,90,100,89);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into sub values("mno",19,90,100,89);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from sub
+    -> 
+    -> ;
++------+------+-------+-------+-------+
+| name | age  | mark1 | mark2 | mark3 |
++------+------+-------+-------+-------+
+| abc  |   19 |   100 |   100 |   100 |
+| def  |   20 |    99 |    99 |    99 |
+| ghi  |   21 |    98 |    99 |    99 |
+| jkl  |   21 |    97 |    96 |    91 |
+| mno  |   19 |    90 |   100 |    89 |
+| mno  |   19 |    90 |   100 |    89 |
++------+------+-------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> delete from sub
+    -> where name = mno
+    -> ;
+ERROR 1054 (42S22): Unknown column 'mno' in 'where clause'
+mysql> delete from sub where name = 'mno';
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> select * from sub
+    -> ;
++------+------+-------+-------+-------+
+| name | age  | mark1 | mark2 | mark3 |
++------+------+-------+-------+-------+
+| abc  |   19 |   100 |   100 |   100 |
+| def  |   20 |    99 |    99 |    99 |
+| ghi  |   21 |    98 |    99 |    99 |
+| jkl  |   21 |    97 |    96 |    91 |
++------+------+-------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into sub values("mno",21,100,91,90);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> alter table sub
+    -> add total int(4);
+Query OK, 5 rows affected (0.05 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from sub
+    -> ;
++------+------+-------+-------+-------+-------+
+| name | age  | mark1 | mark2 | mark3 | total |
++------+------+-------+-------+-------+-------+
+| abc  |   19 |   100 |   100 |   100 |  NULL |
+| def  |   20 |    99 |    99 |    99 |  NULL |
+| ghi  |   21 |    98 |    99 |    99 |  NULL |
+| jkl  |   21 |    97 |    96 |    91 |  NULL |
+| mno  |   21 |   100 |    91 |    90 |  NULL |
++------+------+-------+-------+-------+-------+
+5 rows in set (0.00 sec)
+
+mysql> update sub
+    -> set name = 'blue'
+    -> WHERE name = 'ghi';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from sub;
++------+------+-------+-------+-------+-------+
+| name | age  | mark1 | mark2 | mark3 | total |
++------+------+-------+-------+-------+-------+
+| abc  |   19 |   100 |   100 |   100 |  NULL |
+| def  |   20 |    99 |    99 |    99 |  NULL |
+| blue |   21 |    98 |    99 |    99 |  NULL |
+| jkl  |   21 |    97 |    96 |    91 |  NULL |
+| mno  |   21 |   100 |    91 |    90 |  NULL |
++------+------+-------+-------+-------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table sub
+    -> drop column mark3;
+Query OK, 5 rows affected (0.05 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from sub;
++------+------+-------+-------+-------+
+| name | age  | mark1 | mark2 | total |
++------+------+-------+-------+-------+
+| abc  |   19 |   100 |   100 |  NULL |
+| def  |   20 |    99 |    99 |  NULL |
+| blue |   21 |    98 |    99 |  NULL |
+| jkl  |   21 |    97 |    96 |  NULL |
+| mno  |   21 |   100 |    91 |  NULL |
++------+------+-------+-------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table sub
+    -> alter column mark3 int(6);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int(6)' at line 2
+mysql> alter table sub 
+    -> alter table sub alter column mark2 int(6);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table sub alter column mark2 int(6)' at line 2
+mysql> select * from sub;
++------+------+-------+-------+-------+
+| name | age  | mark1 | mark2 | total |
++------+------+-------+-------+-------+
+| abc  |   19 |   100 |   100 |  NULL |
+| def  |   20 |    99 |    99 |  NULL |
+| blue |   21 |    98 |    99 |  NULL |
+| jkl  |   21 |    97 |    96 |  NULL |
+| mno  |   21 |   100 |    91 |  NULL |
++------+------+-------+-------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table sub modify column mark3 int(6);
+ERROR 1054 (42S22): Unknown column 'mark3' in 'sub'
+mysql> alter table sub modify column mark2 int(6);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from sub;
++------+------+-------+-------+-------+
+| name | age  | mark1 | mark2 | total |
++------+------+-------+-------+-------+
+| abc  |   19 |   100 |   100 |  NULL |
+| def  |   20 |    99 |    99 |  NULL |
+| blue |   21 |    98 |    99 |  NULL |
+| jkl  |   21 |    97 |    96 |  NULL |
+| mno  |   21 |   100 |    91 |  NULL |
++------+------+-------+-------+-------+
+5 rows in set (0.00 sec)
+
+mysql> delete from sub
+    -> where 1=1;
+Query OK, 5 rows affected (0.00 sec)
+
+mysql> select * from sub;
+Empty set (0.00 sec)
+
+mysql> drop table sub;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from sub;
+ERROR 1146 (42S02): Table '16co145.sub' doesn't exist
+mysql> 

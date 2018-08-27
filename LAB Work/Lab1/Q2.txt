@@ -1,0 +1,242 @@
+mysql> create table flights( flno varchar(10), fromPlace varchar(40), toPlace varchar(40), distance int(8), departs varchar(5), arrives varchar(5) );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> select * from flights
+    -> ;
+Empty set (0.00 sec)
+
+mysql> select * from flight;
+ERROR 1146 (42S02): Table '16co145.flight' doesn't exist
+mysql> select * from flights;
+Empty set (0.00 sec)
+
+mysql> insert into flights ("abc1234", "Bangalore", "Paris", 4450, "16/8/2019 - 1400", "18/8/2019 - 2000");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"abc1234", "Bangalore", "Paris", 4450, "16/8/2019 - 1400", "18/8/2019 - 2000")' at line 1
+mysql> insert into flights values("abc1234", "Bangalore", "Paris", 4450, "16/8/2019 - 1400", "18/8/2019 - 2000");
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> select * from flights;
++---------+-----------+---------+----------+---------+---------+
+| flno    | fromPlace | toPlace | distance | departs | arrives |
++---------+-----------+---------+----------+---------+---------+
+| abc1234 | Bangalore | Paris   |     4450 | 16/8/   | 18/8/   |
++---------+-----------+---------+----------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> alter table flights
+    -> modify column distance varchar(15);
+Query OK, 1 row affected (0.05 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> alter table flights modify column distance int(10);
+Query OK, 1 row affected (0.06 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> alter table flights modify column departs varchar(10);
+Query OK, 1 row affected (0.03 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> alter table flights modify column arrives varchar(10);
+Query OK, 1 row affected (0.03 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> select * from flights;
++---------+-----------+---------+----------+---------+---------+
+| flno    | fromPlace | toPlace | distance | departs | arrives |
++---------+-----------+---------+----------+---------+---------+
+| abc1234 | Bangalore | Paris   |     4450 | 16/8/   | 18/8/   |
++---------+-----------+---------+----------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> update flights
+    -> set departs = "16/8/2019 - 1400", arrives = "17/8/2020 - 2000"
+    -> where 1=1;
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 2
+
+mysql> select * from flights;
++---------+-----------+---------+----------+------------+------------+
+| flno    | fromPlace | toPlace | distance | departs    | arrives    |
++---------+-----------+---------+----------+------------+------------+
+| abc1234 | Bangalore | Paris   |     4450 | 16/8/2019  | 17/8/2020  |
++---------+-----------+---------+----------+------------+------------+
+1 row in set (0.00 sec)
+
+mysql> update flights set departs = "16/8/2019 - 1400", arrives = "17/8/2019 - 2000" where 1=1;
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 2
+
+mysql> select * from flights;
++---------+-----------+---------+----------+------------+------------+
+| flno    | fromPlace | toPlace | distance | departs    | arrives    |
++---------+-----------+---------+----------+------------+------------+
+| abc1234 | Bangalore | Paris   |     4450 | 16/8/2019  | 17/8/2019  |
++---------+-----------+---------+----------+------------+------------+
+1 row in set (0.00 sec)
+
+mysql> alter table flights modify column arrives varchar(25);
+Query OK, 1 row affected (0.05 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> alter table flights modify column departs varchar(25);
+Query OK, 1 row affected (0.03 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> update flights set departs = "16/8/2019 - 1400", arrives = "17/8/2019 - 2000" where 1=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from flights;
++---------+-----------+---------+----------+------------------+------------------+
+| flno    | fromPlace | toPlace | distance | departs          | arrives          |
++---------+-----------+---------+----------+------------------+------------------+
+| abc1234 | Bangalore | Paris   |     4450 | 16/8/2019 - 1400 | 17/8/2019 - 2000 |
++---------+-----------+---------+----------+------------------+------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into flights values("abcp10074", "Bangalore", "Tokyo", 4450, "16/9/2019 - 1200", "17/9/2019 - 0000");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from flights;
++-----------+-----------+---------+----------+------------------+------------------+
+| flno      | fromPlace | toPlace | distance | departs          | arrives          |
++-----------+-----------+---------+----------+------------------+------------------+
+| abc1234   | Bangalore | Paris   |     4450 | 16/8/2019 - 1400 | 17/8/2019 - 2000 |
+| abcp10074 | Bangalore | Tokyo   |     4450 | 16/9/2019 - 1200 | 17/9/2019 - 0000 |
++-----------+-----------+---------+----------+------------------+------------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into flights values("pzs10074", "Bangalore", "Hyderabad", 600, "11/9/2019 - 2000", "11/9/2019 - 0000");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from flights;
++-----------+-----------+-----------+----------+------------------+------------------+
+| flno      | fromPlace | toPlace   | distance | departs          | arrives          |
++-----------+-----------+-----------+----------+------------------+------------------+
+| abc1234   | Bangalore | Paris     |     4450 | 16/8/2019 - 1400 | 17/8/2019 - 2000 |
+| abcp10074 | Bangalore | Tokyo     |     4450 | 16/9/2019 - 1200 | 17/9/2019 - 0000 |
+| pzs10074  | Bangalore | Hyderabad |      600 | 11/9/2019 - 2000 | 11/9/2019 - 0000 |
++-----------+-----------+-----------+----------+------------------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into flights values("gdz324", "Bangalore", "Pune", 890, "10/9/2019 - 2000", "11/9/2019 - 0100");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from flights;
++-----------+-----------+-----------+----------+------------------+------------------+
+| flno      | fromPlace | toPlace   | distance | departs          | arrives          |
++-----------+-----------+-----------+----------+------------------+------------------+
+| abc1234   | Bangalore | Paris     |     4450 | 16/8/2019 - 1400 | 17/8/2019 - 2000 |
+| abcp10074 | Bangalore | Tokyo     |     4450 | 16/9/2019 - 1200 | 17/9/2019 - 0000 |
+| pzs10074  | Bangalore | Hyderabad |      600 | 11/9/2019 - 2000 | 11/9/2019 - 0000 |
+| gdz324    | Bangalore | Pune      |      890 | 10/9/2019 - 2000 | 11/9/2019 - 0100 |
++-----------+-----------+-----------+----------+------------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into flights values("xdg7314", "Bangalore", "NYC", 8900, "02/9/2019 - 2000", "04/9/2019 - 0100");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from flights;
++-----------+-----------+-----------+----------+------------------+------------------+
+| flno      | fromPlace | toPlace   | distance | departs          | arrives          |
++-----------+-----------+-----------+----------+------------------+------------------+
+| abc1234   | Bangalore | Paris     |     4450 | 16/8/2019 - 1400 | 17/8/2019 - 2000 |
+| abcp10074 | Bangalore | Tokyo     |     4450 | 16/9/2019 - 1200 | 17/9/2019 - 0000 |
+| pzs10074  | Bangalore | Hyderabad |      600 | 11/9/2019 - 2000 | 11/9/2019 - 0000 |
+| gdz324    | Bangalore | Pune      |      890 | 10/9/2019 - 2000 | 11/9/2019 - 0100 |
+| xdg7314   | Bangalore | NYC       |     8900 | 02/9/2019 - 2000 | 04/9/2019 - 0100 |
++-----------+-----------+-----------+----------+------------------+------------------+
+5 rows in set (0.00 sec)
+
+mysql> alter table flights
+    -> add price int(10);
+Query OK, 5 rows affected (0.05 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from flights;
++-----------+-----------+-----------+----------+------------------+------------------+-------+
+| flno      | fromPlace | toPlace   | distance | departs          | arrives          | price |
++-----------+-----------+-----------+----------+------------------+------------------+-------+
+| abc1234   | Bangalore | Paris     |     4450 | 16/8/2019 - 1400 | 17/8/2019 - 2000 |  NULL |
+| abcp10074 | Bangalore | Tokyo     |     4450 | 16/9/2019 - 1200 | 17/9/2019 - 0000 |  NULL |
+| pzs10074  | Bangalore | Hyderabad |      600 | 11/9/2019 - 2000 | 11/9/2019 - 0000 |  NULL |
+| gdz324    | Bangalore | Pune      |      890 | 10/9/2019 - 2000 | 11/9/2019 - 0100 |  NULL |
+| xdg7314   | Bangalore | NYC       |     8900 | 02/9/2019 - 2000 | 04/9/2019 - 0100 |  NULL |
++-----------+-----------+-----------+----------+------------------+------------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> delete from flights
+    -> where flno = 'gdz324';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from flights;
++-----------+-----------+-----------+----------+------------------+------------------+-------+
+| flno      | fromPlace | toPlace   | distance | departs          | arrives          | price |
++-----------+-----------+-----------+----------+------------------+------------------+-------+
+| abc1234   | Bangalore | Paris     |     4450 | 16/8/2019 - 1400 | 17/8/2019 - 2000 |  NULL |
+| abcp10074 | Bangalore | Tokyo     |     4450 | 16/9/2019 - 1200 | 17/9/2019 - 0000 |  NULL |
+| pzs10074  | Bangalore | Hyderabad |      600 | 11/9/2019 - 2000 | 11/9/2019 - 0000 |  NULL |
+| xdg7314   | Bangalore | NYC       |     8900 | 02/9/2019 - 2000 | 04/9/2019 - 0100 |  NULL |
++-----------+-----------+-----------+----------+------------------+------------------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table flights 
+    -> drop column distance;
+Query OK, 4 rows affected (0.05 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from flights;
++-----------+-----------+-----------+------------------+------------------+-------+
+| flno      | fromPlace | toPlace   | departs          | arrives          | price |
++-----------+-----------+-----------+------------------+------------------+-------+
+| abc1234   | Bangalore | Paris     | 16/8/2019 - 1400 | 17/8/2019 - 2000 |  NULL |
+| abcp10074 | Bangalore | Tokyo     | 16/9/2019 - 1200 | 17/9/2019 - 0000 |  NULL |
+| pzs10074  | Bangalore | Hyderabad | 11/9/2019 - 2000 | 11/9/2019 - 0000 |  NULL |
+| xdg7314   | Bangalore | NYC       | 02/9/2019 - 2000 | 04/9/2019 - 0100 |  NULL |
++-----------+-----------+-----------+------------------+------------------+-------+
+4 rows in set (0.00 sec)
+
+mysql> update flights
+    -> set price = 4100
+    -> where name = 'pzs10074';
+ERROR 1054 (42S22): Unknown column 'name' in 'where clause'
+mysql> update flights set price = 4100 where flno = 'pzs10074';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from flights;
++-----------+-----------+-----------+------------------+------------------+-------+
+| flno      | fromPlace | toPlace   | departs          | arrives          | price |
++-----------+-----------+-----------+------------------+------------------+-------+
+| abc1234   | Bangalore | Paris     | 16/8/2019 - 1400 | 17/8/2019 - 2000 |  NULL |
+| abcp10074 | Bangalore | Tokyo     | 16/9/2019 - 1200 | 17/9/2019 - 0000 |  NULL |
+| pzs10074  | Bangalore | Hyderabad | 11/9/2019 - 2000 | 11/9/2019 - 0000 |  4100 |
+| xdg7314   | Bangalore | NYC       | 02/9/2019 - 2000 | 04/9/2019 - 0100 |  NULL |
++-----------+-----------+-----------+------------------+------------------+-------+
+4 rows in set (0.00 sec)
+
+mysql> delete from flights
+    -> where 1=1;
+Query OK, 4 rows affected (0.00 sec)
+
+mysql> select * from flights;
+Empty set (0.00 sec)
+
+mysql> alter table flights
+    -> change price journey_price int(10);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc flights
+    -> ;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| flno          | varchar(10) | YES  |     | NULL    |       |
+| fromPlace     | varchar(40) | YES  |     | NULL    |       |
+| toPlace       | varchar(40) | YES  |     | NULL    |       |
+| departs       | varchar(25) | YES  |     | NULL    |       |
+| arrives       | varchar(25) | YES  |     | NULL    |       |
+| journey_price | int(10)     | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
