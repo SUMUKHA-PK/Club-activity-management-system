@@ -3,26 +3,49 @@
 1. Students  
 2. Projects  
 3. Clubs  
-4. Group of clubs
+4. Events
 
 **Attributes:**
 
-1. Name, Roll Number, Age, Sex, Department, SIG, Designation in the respective SIG
+* Students  
+  
+    1. Name (First, Middle, Last)  
+    2. Roll Number  (PK)  
+    3. Age  
+    4. Sex  
+    5. Department     
+    6. SIG  
+    7. Designation in club    
+      
+* Projects  
 
-   **Primary key:** Roll Number
+    1. Name (PK)  
+    2. Discipline  
+    3. Start time  
+    4. End time  
+    5. Number of students working  
+    6. Project ID  (PK)
+    7. Supervising club   
+      
+* Clubs  
+     
+    1. Name (PK)  
+    2. SIGs  (SIG Head, Number of members)  
+    3. Number of people  
+    4. Convenor  
 
-2. Name, Discipline, Start time, End time, Number of people working on it
-
-   **Primary key:** Name 
-   
-3. Name of the club , SIGs, Number of people,  Talks conducted, workshops conducted, Flagship Events.
-
-   **Primary key:** Name of the Club
-
-**Relationship:**
-
-1. Student **WORKS ON** Project.
-2. Club **BELONGS TO** Group of Clubs.
-3. Group of clubs **MANAGE**s Projects.
-4. Student **BELONGS TO** Group of clubs.
+* Events  
+  
+    1. Name of the event  
+    2. SIG involved
+    3. Talks conducted  
+    4. Workshops conducted  
+    5. Flagship events  
+  
+**Relationships:**
+  
+1. Student **WORKS ON** Project. (Number of hours)  
+2. Clubs **CONDUCT** Events.
+3. Clubs **MANAGE**s Projects.
+4. Student **BELONGS TO** Clubs.
 
