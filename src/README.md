@@ -1,6 +1,6 @@
 Follow the following steps to run the code:
 
-
+* Setup :
 1. For linux distros:  
     ```sudo apt-get install mysql-server```  
     ```mysql secure_installation```  
@@ -14,3 +14,8 @@ Follow the following steps to run the code:
 2. Windows: 
     https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html  (follow this link :P)
 
+* Database creation :
+    run ```node creation_db.js```
+
+* Table creation : 
+    run ```node creation_table.js```
