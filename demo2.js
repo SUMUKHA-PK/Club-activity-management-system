@@ -1,11 +1,16 @@
-var read = require('readline');
-var interface = read.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    terminal: false
-  });
+const readline = require('readline');
 
-  interface.on('line', function(line){
-    if (line.indexOf("42") != -1) process.exit();
-    console.log(line);
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+var q;
+
+rl.question('What do you think of Node.js? ', (answer) => {
+  // TODO: Log the answer in a database
+  q=answer;
+  console.log(`Thank you for your valuable feedback: ${q}`);
+
+  rl.close();
 });
