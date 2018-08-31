@@ -10,26 +10,22 @@ var con = mysql.createConnection({
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
+});
 
-var q1 = "CREATE TABLE blah(g int(1));"
+var q1 = "CREATE TABLE blah(a int(1));"
+var q2 = "select * from u;"
 
-con.query(q1, function(err,results){
-    if (err) {
-        console.log('this.sql', this.sql); //command/query
-        console.log(command);
-        console.log("ERROR" + results);
-        console.log(err);
-        return;
-    }
-    console.log('this.sql', this.sql); //command/query
+con.query(q2, function(err,rows,fields){
+    if (err) throw err;
+    console.log('this.sql', this.sql); 
     //console.log(command);
-    console.log("good"+  results);
+    console.log(rows[0]);
+    //console.log(fields);
     console.log("TABLE Student created");
 });
 
 con.end(function(err){
     if(err) throw err;
     console.log("Connection terminated");
-    });
-      
 });
+      
