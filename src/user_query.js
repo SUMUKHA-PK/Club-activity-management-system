@@ -25,9 +25,15 @@ var con = mysql.createConnection({
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  con.query(q, function(err,result){
-        if(err) throw err;
-    });
+  
+  con.query(q, function(err,rows,fields){
+    if (err) throw err;
+    //console.log('this.sql', this.sql); 
+    //console.log(command);
+    console.log(rows[0]);
+    //console.log(fields);
+    //console.log("TABLE Student created");
+  });
 
   con.end(function(err){
       if(err) throw err;
