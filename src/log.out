@@ -1,0 +1,2 @@
+mysql> create table archie(name varchar(20), roll int);
+ERROR 1046 (3D000): No database selected
