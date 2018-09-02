@@ -13,7 +13,7 @@
     2. Roll Number  (PK)     (NOTNULL)
     3. Age                     (CHECK < 100) TRIGGER
     4. Sex                      (NOT NULL)
-    5. Department               
+    5. Department               (NOT NULL)
     6. SIG                  
     7. Designation in club      (DEFAULT NULL)  
       

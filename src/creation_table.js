@@ -11,15 +11,16 @@ var con = mysql.createConnection({
     if (err) throw err;
     console.log("Connected!");
     
-    var q1 = "CREATE TABLE Student(Roll_No varchar(13), First_name varchar(15), Middle_name varchar(15),Last_name varchar(15),"
-            + "Age int(3), Sex varchar(2), Department varchar(40), Designation_in_club varchar(20), SIG varchar(15),PRIMARY KEY(Roll_no))";
+    var q1 = "CREATE TABLE Student(Roll_No varchar(13) NOT NULL, First_name varchar(15) NOT NULL, Middle_name varchar(15),Last_name varchar(15),"
+              + "Age int(3), Sex varchar(2) NOT NULL, Department varchar(40) NOT NULL, Designation_in_club varchar(20) ," 
+              + "SIG varchar(15),PRIMARY KEY(Roll_no))";//, name varchar(45) AS (concat_ws(' ',First_name,Middle_name,Last_name) NOT NULL);";
 
     var q2 = "CREATE TABLE Clubs(Name varchar(20), SIG_Head varchar(20), No_of_Members int(4), Convenor varchar(20), PRIMARY KEY(Name))";
 
     var q3 = "CREATE TABLE Projects(Project_ID varchar(10), Discipline varchar(15), Start_time varchar(25),"
               + "End_time varchar(25), Name varchar(25), Supervising_club varchar(20), No_students int(2), PRIMARY KEY(Project_ID))";
 
-    //var q4 = "CREATE TABLE Events(Name varchar(10), Talks_conducted varchar(10), Workshops_conducted varchar(10),";
+    var q4 = "CREATE TABLE Events(Name varchar(10), Talks_conducted varchar(10), Workshops_conducted varchar(10), Flagship_Events varchar(10));";
 
     con.query(q1, function(err,result){
       if(err) throw err;
@@ -34,6 +35,11 @@ var con = mysql.createConnection({
     con.query(q3, function(err,result){
       if(err) throw err;
       console.log("TABLE Projects created");
+    });
+
+    con.query(q4, function(err,result){
+      if(err) throw err;
+      console.log("TABLE Events created");
     });
 
     con.end(function(err){
