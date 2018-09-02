@@ -9,36 +9,36 @@
 
 * Students  
   
-    1. Name (First, Middle, Last)  
-    2. Roll Number  (PK)  
-    3. Age  
-    4. Sex  
-    5. Department     
-    6. SIG  
-    7. Designation in club    
+    1. Name (First, Middle, Last)  (NOT NULL) 
+    2. Roll Number  (PK)     (NOTNULL)
+    3. Age                     (CHECK < 100) TRIGGER
+    4. Sex                      (NOT NULL)
+    5. Department               
+    6. SIG                  
+    7. Designation in club      (DEFAULT NULL)  
       
 * Projects  
 
-    1. Name (PK)  
-    2. Discipline  
-    3. Start time  
-    4. End time  
-    5. Number of students working  
-    6. Project ID  (PK)
-    7. Supervising club   
+    1. Name        (NOT  NULL)
+    2. Discipline  (NOT NULL)
+    3. Start time  (NOT NULL)
+    4. End time       
+    5. Number of students working  (>0) 
+    6. Project ID  (PK)             
+    7. Supervising club         (NOT NULL)
       
 * Clubs  
      
     1. Name (PK)  
-    2. SIGs  (SIG Head, Number of members)  
-    3. Number of people  
-    4. Convenor  
+    2. SIGs  (SIG Head, Number of members)  (NOT NULL)  
+    3. Number of people  (>0)
+    4. Convenor  (NOT NULL)
 
 * Events  
   
-    1. Name of the event  
-    2. SIG involved
-    3. Talks conducted  
+    1. Name of the event  (PK) 
+    2. SIG involved         
+    3. Talks conducted   
     4. Workshops conducted  
     5. Flagship events  
   
