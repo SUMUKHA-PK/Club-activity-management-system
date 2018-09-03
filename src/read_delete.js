@@ -4,12 +4,12 @@ module.exports = {
 read_delete: function(str) {
 
 var path = __dirname  
-console.log(path)
+//console.log(path)
 
 	
 const fs = require('fs'); 
 path += "/log.out"; 
-console.log(path)
+//console.log(path)
 
 
 
