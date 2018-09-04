@@ -1,0 +1,423 @@
+archanapriya@archanapriya-Inspiron-5559:~$ cd DBMS-Lab/
+archanapriya@archanapriya-Inspiron-5559:~/DBMS-Lab$ cd src
+archanapriya@archanapriya-Inspiron-5559:~/DBMS-Lab/src$ mysql -u lab -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 54
+Server version: 5.7.22-0ubuntu0.17.10.1 (Ubuntu)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use SCA;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_SCA |
++---------------+
+| Clubs         |
+| Events        |
+| Projects      |
+| Student       |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> desc Clubs;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| Name          | varchar(20) | NO   | PRI | NULL    |       |
+| SIG_Head      | varchar(20) | NO   |     | NULL    |       |
+| No_of_Members | int(4)      | YES  |     | NULL    |       |
+| Convenor      | varchar(20) | NO   |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> tee l.out;
+Logging to file 'l.out'
+mysql> insert into Clubs values(1,1,1,1);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> \q;
+Bye
+archanapriya@archanapriya-Inspiron-5559:~/DBMS-Lab/src$ mysql -u lab -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 55
+Server version: 5.7.22-0ubuntu0.17.10.1 (Ubuntu)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use SCA;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> \q;
+Bye
+archanapriya@archanapriya-Inspiron-5559:~/DBMS-Lab/src$ cd ..
+archanapriya@archanapriya-Inspiron-5559:~/DBMS-Lab$ cd ..
+archanapriya@archanapriya-Inspiron-5559:~$ mysql -u lab -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 56
+Server version: 5.7.22-0ubuntu0.17.10.1 (Ubuntu)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> tee logger.out
+Logging to file 'logger.out'
+mysql> use SCA;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_SCA |
++---------------+
+| Clubs         |
+| Events        |
+| Projects      |
+| Student       |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> desc Student;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Roll_No             | varchar(13) | NO   | PRI | NULL    |       |
+| First_name          | varchar(15) | NO   |     | NULL    |       |
+| Middle_name         | varchar(15) | YES  |     | NULL    |       |
+| Last_name           | varchar(15) | YES  |     | NULL    |       |
+| Age                 | int(3)      | YES  |     | NULL    |       |
+| Sex                 | varchar(2)  | NO   |     | NULL    |       |
+| Department          | varchar(40) | NO   |     | NULL    |       |
+| Designation_in_club | varchar(20) | YES  |     | NULL    |       |
+| SIG                 | varchar(15) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> create table Works_On(Roll_no int(2) NOT NULL, Project_ID varchar(10) NOT NULL, No_of_hours int(3),FOREIGN KEY(Roll_no), FOREIGN KEY(Project_ID));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' FOREIGN KEY(Project_ID))' at line 1
+mysql> create table Works_On(Roll_no int(2) NOT NULL, Project_ID varchar(10) NOT NULL, No_of_hours int(3),FOREIGN KEY(Roll_no) references Students(Roll_No), FOREIGN KEY(Project_ID) references Student(Project_ID));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> mysql> create table Works_On(Roll_no int(2) NOT NULL, Project_ID varchar(10) NOT NULL, No_of_hours int(3),FOREIGN KEY(Roll_no) referencents(Roll_No), FOREIGN KEY(Project_ID) references Projects(Project_ID));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> desc Projects;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| Project_ID       | varchar(10) | NO   | PRI | NULL    |       |
+| Discipline       | varchar(15) | NO   |     | NULL    |       |
+| Start_time       | varchar(25) | NO   |     | NULL    |       |
+| End_time         | varchar(25) | YES  |     | NULL    |       |
+| Name             | varchar(25) | NO   |     | NULL    |       |
+| Supervising_club | varchar(20) | NO   |     | NULL    |       |
+| No_students      | int(2)      | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> create table Works_On(Roll_no int(2) NOT NULL, Project_ID varchar(10) NOT NULL, No_of_hours int(3),FOREIGN KEY(Roll_no) references Student(Roll_No), FOREIGN KEY(Project_ID) references Projects(Project_ID));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> desc Student;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Roll_No             | varchar(13) | NO   | PRI | NULL    |       |
+| First_name          | varchar(15) | NO   |     | NULL    |       |
+| Middle_name         | varchar(15) | YES  |     | NULL    |       |
+| Last_name           | varchar(15) | YES  |     | NULL    |       |
+| Age                 | int(3)      | YES  |     | NULL    |       |
+| Sex                 | varchar(2)  | NO   |     | NULL    |       |
+| Department          | varchar(40) | NO   |     | NULL    |       |
+| Designation_in_club | varchar(20) | YES  |     | NULL    |       |
+| SIG                 | varchar(15) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> create table Works_On(Roll_no int(2) NOT NULL, Project_ID varchar(10) NOT NULL, No_of_hours int(3),FOREIGN KEY(Roll_no) references Student(Roll_No), FOREIGN KEY(Project_ID) references Projects(Project_ID), PRIMARY KEY(Roll_no, Project_ID));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> create table Works_On(Roll_no int(2) NOT NULL, Project_ID varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_no, Project_ID)); Query OK, 0 rows affected (0.41 sec)
+
+mysql> create table abc(Roll_no int(2), Project_ID varchar(10), No_of_hours int(3),FOREIGN KEY(Roll_no) references Student(Roll_No), FOREIGN KEY(Project_ID) references Projects(Project_ID), PRIMARY KEY(Roll_no, Project_ID));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> create table abcd(name varchar, FOREIGN KEY(name) references Student(First_name));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' FOREIGN KEY(name) references Student(First_name))' at line 1
+mysql> create table abcd(name varchar, constraint FOREIGN KEY(name) references Student(First_name));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' constraint FOREIGN KEY(name) references Student(First_name))' at line 1
+mysql> create table abcd(name varchar, constraint FOREIGN KEY (name) references Student(First_name));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' constraint FOREIGN KEY (name) references Student(First_name))' at line 1
+mysql> create table abcd(name varchar(20), FOREIGN KEY (name) references Student(First_name));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> create table abcd(name varchar(20), FOREIGN KEY (name) REFERENCES Student(First_name));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> create table abcd(name varchar(20), FOREIGN KEY (name) REFERENCES Student(Roll_No));
+Query OK, 0 rows affected (0.49 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_SCA |
++---------------+
+| Clubs         |
+| Events        |
+| Projects      |
+| Student       |
+| Works_On      |
+| abcd          |
++---------------+
+6 rows in set (0.00 sec)
+
+mysql> drop table abcd;
+Query OK, 0 rows affected (0.26 sec)
+
+mysql> drop table Works_On;
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> create table Works_On(Roll_No int(2) NOT NULL, Project_ID varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_No, Project_ID), FOREIGN KEY (Roll_No) references Student(Roll_No), FOREIGN KEY (Project_ID) references Projects(Project_ID));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> desc Projects;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| Project_ID       | varchar(10) | NO   | PRI | NULL    |       |
+| Discipline       | varchar(15) | NO   |     | NULL    |       |
+| Start_time       | varchar(25) | NO   |     | NULL    |       |
+| End_time         | varchar(25) | YES  |     | NULL    |       |
+| Name             | varchar(25) | NO   |     | NULL    |       |
+| Supervising_club | varchar(20) | NO   |     | NULL    |       |
+| No_students      | int(2)      | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> create table Works_On(Roll_No1 int(2) NOT NULL, Project_ID1 varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_No1, Project_ID1), FOREIGN KEY (Roll_No1) references Student(Roll_No), FOREIGN KEY (Project_ID1) references Projects(Project_ID));
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> desc Student;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Roll_No             | varchar(13) | NO   | PRI | NULL    |       |
+| First_name          | varchar(15) | NO   |     | NULL    |       |
+| Middle_name         | varchar(15) | YES  |     | NULL    |       |
+| Last_name           | varchar(15) | YES  |     | NULL    |       |
+| Age                 | int(3)      | YES  |     | NULL    |       |
+| Sex                 | varchar(2)  | NO   |     | NULL    |       |
+| Department          | varchar(40) | NO   |     | NULL    |       |
+| Designation_in_club | varchar(20) | YES  |     | NULL    |       |
+| SIG                 | varchar(15) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> desc Projects;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| Project_ID       | varchar(10) | NO   | PRI | NULL    |       |
+| Discipline       | varchar(15) | NO   |     | NULL    |       |
+| Start_time       | varchar(25) | NO   |     | NULL    |       |
+| End_time         | varchar(25) | YES  |     | NULL    |       |
+| Name             | varchar(25) | NO   |     | NULL    |       |
+| Supervising_club | varchar(20) | NO   |     | NULL    |       |
+| No_students      | int(2)      | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> create table Works_On(Roll_No1 varchar(13) NOT NULL, Project_ID1 varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_No1, Project_ID1), FOREIGN KEY (Roll_No1) references Student(Roll_No), FOREIGN KEY (Project_ID1) references Projects(Project_ID));
+Query OK, 0 rows affected (0.45 sec)
+
+mysql> desc Works_On;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Roll_No1    | varchar(13) | NO   | PRI | NULL    |       |
+| Project_ID1 | varchar(10) | NO   | PRI | NULL    |       |
+| No_of_hours | int(3)      | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> create table Works_On(Roll_No1 varchar(13) NOT NULL, Project_ID1 varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_No1, Project_ID1), FOREIGN KEY (Roll_No1) references Student(Roll_No), FOREIGN KEY (Project_ID1) references Proje
+mysql> desc CLubs;
+ERROR 1146 (42S02): Table 'SCA.CLubs' doesn't exist
+mysql> desc Clubs;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| Name          | varchar(20) | NO   | PRI | NULL    |       |
+| SIG_Head      | varchar(20) | NO   |     | NULL    |       |
+| No_of_Members | int(4)      | YES  |     | NULL    |       |
+| Convenor      | varchar(20) | NO   |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create table Belongs_to(Roll_No varchar(13) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Roll_No,Name),  FOREIGN KEY (Roll_No) references Student(Roll_No), FOREIGN KEY (Name) references Clubs(Name));
+Query OK, 0 rows affected (0.46 sec)
+
+mysql> desc Events;                                                            +---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Name                | varchar(10) | NO   | PRI | NULL    |       |
+| Talks_conducted     | varchar(10) | YES  |     | NULL    |       |
+| Workshops_conducted | varchar(10) | YES  |     | NULL    |       |
+| Flagship_Events     | varchar(10) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc Clubs;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| Name          | varchar(20) | NO   | PRI | NULL    |       |
+| SIG_Head      | varchar(20) | NO   |     | NULL    |       |
+| No_of_Members | int(4)      | YES  |     | NULL    |       |
+| Convenor      | varchar(20) | NO   |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create table Conduct(Name varchar(20) NOT NULL,Event_name varchar(10) NOT NULL, PRIMARY KEY(Name,Event_name),  FOREIGN KEY (Name) references Clubs(Name), FOREIGN KEY (Event_name) references Events(Name));
+Query OK, 0 rows affected (0.40 sec)
+
+mysql> desc Projects;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| Project_ID       | varchar(10) | NO   | PRI | NULL    |       |
+| Discipline       | varchar(15) | NO   |     | NULL    |       |
+| Start_time       | varchar(25) | NO   |     | NULL    |       |
+| End_time         | varchar(25) | YES  |     | NULL    |       |
+| Name             | varchar(25) | NO   |     | NULL    |       |
+| Supervising_club | varchar(20) | NO   |     | NULL    |       |
+| No_students      | int(2)      | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> create table Manage(Project_ID varchar(10) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Project_ID,Name),  FOREIGN KEY (Project_ID) references Projects(Project_ID), FOREIGN KEY (Name) references Clubs(Name));
+Query OK, 0 rows affected (0.63 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_SCA |
++---------------+
+| Belongs_to    |
+| Clubs         |
+| Conduct       |
+| Events        |
+| Manage        |
+| Projects      |
+| Student       |
+| Works_On      |
++---------------+
+8 rows in set (0.00 sec)
+
+mysql> desc Student;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Roll_No             | varchar(13) | NO   | PRI | NULL    |       |
+| First_name          | varchar(15) | NO   |     | NULL    |       |
+| Middle_name         | varchar(15) | YES  |     | NULL    |       |
+| Last_name           | varchar(15) | YES  |     | NULL    |       |
+| Age                 | int(3)      | YES  |     | NULL    |       |
+| Sex                 | varchar(2)  | NO   |     | NULL    |       |
+| Department          | varchar(40) | NO   |     | NULL    |       |
+| Designation_in_club | varchar(20) | YES  |     | NULL    |       |
+| SIG                 | varchar(15) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> desc Projects;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| Project_ID       | varchar(10) | NO   | PRI | NULL    |       |
+| Discipline       | varchar(15) | NO   |     | NULL    |       |
+| Start_time       | varchar(25) | NO   |     | NULL    |       |
+| End_time         | varchar(25) | YES  |     | NULL    |       |
+| Name             | varchar(25) | NO   |     | NULL    |       |
+| Supervising_club | varchar(20) | NO   |     | NULL    |       |
+| No_students      | int(2)      | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> desc Clubs;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| Name          | varchar(20) | NO   | PRI | NULL    |       |
+| SIG_Head      | varchar(20) | NO   |     | NULL    |       |
+| No_of_Members | int(4)      | YES  |     | NULL    |       |
+| Convenor      | varchar(20) | NO   |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc Events;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Name                | varchar(10) | NO   | PRI | NULL    |       |
+| Talks_conducted     | varchar(10) | YES  |     | NULL    |       |
+| Workshops_conducted | varchar(10) | YES  |     | NULL    |       |
+| Flagship_Events     | varchar(10) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc Works_On;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Roll_No1    | varchar(13) | NO   | PRI | NULL    |       |
+| Project_ID1 | varchar(10) | NO   | PRI | NULL    |       |
+| No_of_hours | int(3)      | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc Manage;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Project_ID | varchar(10) | NO   | PRI | NULL    |       |
+| Name       | varchar(20) | NO   | PRI | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc Conducts;
+ERROR 1146 (42S02): Table 'SCA.Conducts' doesn't exist
+mysql> desc Conduct;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Name       | varchar(20) | NO   | PRI | NULL    |       |
+| Event_name | varchar(10) | NO   | PRI | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc Belongs_to;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Roll_No | varchar(13) | NO   | PRI | NULL    |       |
+| Name    | varchar(20) | NO   | PRI | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> 
