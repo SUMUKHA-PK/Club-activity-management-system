@@ -22,6 +22,16 @@ var con = mysql.createConnection({
 
     var q4 = "CREATE TABLE Events(Name varchar(10) NOT NULL, Talks_conducted varchar(10), Workshops_conducted varchar(10), Flagship_Events varchar(10), PRIMARY KEY(Name));";
 
+    var q5 = "create table Works_On(Roll_No1 varchar(13) NOT NULL, Project_ID1 varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_No1, Project_ID1), FOREIGN KEY (Roll_No1) references Student(Roll_No), FOREIGN KEY (Project_ID1) references Projects(Project_ID));";
+
+    var q6 = "create table Belongs_to(Roll_No varchar(13) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Roll_No,Name),  FOREIGN KEY (Roll_No) references Student(Roll_No), FOREIGN KEY (Name) references Clubs(Name));";
+
+    var q7 = "create table Conduct(Name varchar(20) NOT NULL,Event_name varchar(10) NOT NULL, PRIMARY KEY(Name,Event_name),  FOREIGN KEY (Name) references Clubs(Name), FOREIGN KEY (Event_name) references Events(Name));";
+
+    var q8 = "create table Manage(Project_ID varchar(10) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Project_ID,Name),  FOREIGN KEY (Project_ID) references Projects(Project_ID), FOREIGN KEY (Name) references Clubs(Name));";
+
+
+
     con.query(q1, function(err,result){
       if(err) throw err;
       console.log("TABLE Student created");
@@ -40,6 +50,23 @@ var con = mysql.createConnection({
     con.query(q4, function(err,result){
       if(err) throw err;
       console.log("TABLE Events created");
+    });
+
+     con.query(q5, function(err,result){
+      if(err) throw err;
+      console.log("TABLE Works_On created");
+    });
+      con.query(q6, function(err,result){
+      if(err) throw err;
+      console.log("TABLE Belongs_to created");
+    });
+       con.query(q7, function(err,result){
+      if(err) throw err;
+      console.log("TABLE Conduct created");
+    });
+        con.query(q8, function(err,result){
+      if(err) throw err;
+      console.log("TABLE Manage created");
     });
 
     con.end(function(err){
