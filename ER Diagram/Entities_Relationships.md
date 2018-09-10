@@ -38,9 +38,9 @@
   
     1. Name of the event  (PK) 
     2. SIG involved         
-    3. Talks conducted   
-    4. Workshops conducted  
-    5. Flagship events  
+    3. Talks conducted      (Multivalued)
+    4. Workshops conducted  (Multivalued)
+    5. Flagship events      (Multivalued)
   
 **Relationships:**
   
