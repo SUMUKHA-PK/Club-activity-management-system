@@ -36,11 +36,13 @@
 
 * Events  
   
-    1. Name of the event  (PK) 
+    1. Name of the event    (PK) 
     2. SIG involved         
     3. Talks conducted      (Multivalued)
     4. Workshops conducted  (Multivalued)
     5. Flagship events      (Multivalued)
+    6. Time / date 
+    7. Club name            (FK)
   
 **Relationships:**
   
