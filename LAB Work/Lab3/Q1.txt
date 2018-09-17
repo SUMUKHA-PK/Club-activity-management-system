@@ -1,0 +1,44 @@
+NATIONAL INSTITUTE OF TECHNOLOGY, SURATHKAL
+Department of Computer Science & Engineering
+DATABASE MANAGEMENT SYSTEM LAB-CO303
+
+1. For the following relation schema:
+employee(employee-name, street, city) 
+works(employee-name, company-name, salary)
+company(company-name, city)
+manages(employee-name, manager-name)
+Give an expression in SQL for each of the following queries:
+
+a) Find the names, street address, and cities of residence for all employees who work for 'State Bank Of India' and earn more than $10,000.
+
+Ans. SELECT * FROM employee INNER JOIN works ON ((company-name = 'State Bank of India') && (salary>10000));
+     
+b) Find the names of all employees in the database who live in the same cities as the companies for which they work.
+
+Ans. SELECT employee.employee-name FROM employee INNER JOIN company WHERE employee.city = company.city
+
+c) Find the names of all employees in the database who live in the same cities and on the same streets as do their managers.
+
+Ans. //*First find out who all are managers*//
+        CREATE TABLE managers SELECT * FROM employee INNER JOIN manages ON employee.employee-name = manages.employee-name;
+    
+     //* Next operate on managers and employees *//
+SELECT employee.employee-name FROM employee INNER JOIN managers ON ((employee.employee-name NOT manager.employee-name) && (employee.street = manager.street) && (employee.city = manager.city) );
+
+d) Find the names of all employees in the database who do not work for 'State Bank Of India'. Assume that all people work for exactly one company.
+
+Ans. SELECT employee.employee-name FROM employee INNER JOIN works ON (works.company-name NOT 'State Bank of India');
+
+e) Find the names of all employees in the database who earn more than every employee of 'ICICI'. Assume that all people work for at most one company.
+
+Ans. SELECT employee-name FROM works where salary > (SELECT MAX(salary) FROM works.company-name = 'ICICI') ; 
+
+f) Assume that the companies may be located in several cities. Find all companies located in every city in which 'ICICI' is located.
+
+Ans. SELECT company.company-name FROM 
+
+g) Find the names of all employees who earn more than the average salary of all employees of their company. Assume that all people work for at most one company.
+
+Ans. SELECT employee-name FROM works WHERE salary > (SELECT AVG(salary) FROM works.company-name = )
+
+h) Find the name of the company that has the smallest payroll.
