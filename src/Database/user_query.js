@@ -9,8 +9,6 @@ const rl = readline.createInterface({
 
 var q;      
 var str="";
-//var path = __dirname  
-// console.log(path)                                   //Variable for the query
 
 rl.question('Enter the query ', (answer) => {
 q=answer;
@@ -28,11 +26,22 @@ con.connect(function(err) {
   
   con.query(q, function(err,rows,fields){
     if (err) throw err;
-    //console.log('this.sql', this.sql); 
-    //console.log(command);
-    console.log(rows[0]);
-    //console.log(fields);
-    //console.log("TABLE Student created");
+    if(rows!="undefined")
+    {
+      var strr = "Department";
+      for(i=0;i<rows.length;i++)
+      {
+        console.log(rows[i].Department);//.fields[i].name);
+      }
+      for(i=0;i<fields.length;i++)
+      {
+        console.log(fields[i].name);
+      }
+    }
+    else
+    {
+      console.log("Query executed");
+    }
   });
 
   con.end(function(err){
@@ -41,7 +50,7 @@ con.connect(function(err) {
     });
 });
   
-  r.read_delete(str);
+  //r.read_delete(str);
   console.log(str);
   rl.close();
 });

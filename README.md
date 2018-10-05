@@ -41,15 +41,15 @@ for his interests and obtain guidance from the existing students of the universi
 
 **Frameworks and tools used:**
 
-    MySQL : For maintaining the database, the backend of the web application.
-    JavaScript : To encapsulate MySQL and provide a framework.
-    jQuery, HTML, CSS : To make the UI beautiful , the frontend of the web application.  
+* MySQL : For maintaining the database, the backend of the web application.
+* JavaScript : To encapsulate MySQL and provide a framework.
+* jQuery, HTML, CSS : User interface.
 
 
 **Members:**
 
-    Sumukha PK (16CO145, sumukhapk46@gmail.com)
-    Archana Priyadarshani Sahoo (16CO207, archana98priya@gmail.com)
+1. Sumukha PK (16CO145, sumukhapk46@gmail.com)
+2. Archana Priyadarshani Sahoo (16CO207, archana98priya@gmail.com)
 
 
 
