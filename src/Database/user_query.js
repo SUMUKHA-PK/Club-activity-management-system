@@ -28,15 +28,14 @@ con.connect(function(err) {
     if (err) throw err;
     if(rows!="undefined")
     {
-      var strr = "Department";
       for(i=0;i<rows.length;i++)
       {
-        console.log(rows[i].Department);//.fields[i].name);
+        console.log(rows[i]);//.fields[i].name);
       }
-      for(i=0;i<fields.length;i++)
-      {
-        console.log(fields[i].name);
-      }
+      // for(i=0;i<fields.length;i++)
+      // {
+      //   console.log(fields[i].name);
+      // }
     }
     else
     {
