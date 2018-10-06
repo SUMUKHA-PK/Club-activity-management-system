@@ -1,9 +1,6 @@
 
 • logger
 • make file
-• importing data directly from csv at once
-• search bar
-• html
 • name : archana search
 * When index.js is run, it opens up a webpage with a search bar. This search bar will obtain data from the user and pass it to the JS script. From here we parse
   the input to the relevant query and query the db which is already created. This is send the results back to the webpage. 
