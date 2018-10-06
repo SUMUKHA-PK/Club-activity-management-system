@@ -16,7 +16,12 @@
         <form><br>
           Search: <input type="text" id="search"/><br><br>
           <input type="submit" value="Submit" onclick="formdata()"/><br>
-          </form>
+        </form>
+
+        <form><br>
+          Query: <input type="text" id="query"/><br><br>
+          <input type="submit" value="Submit" onclick="formdata1()"/><br>
+        </form>
       </div>
 </div> 
 <head>
@@ -114,8 +119,19 @@ function processFunction() {
     var search1= document.getElementById("search").value;
     document.writeln("searching for " + search1 + "<br>");
     
-    console.log(search1);
+    //console.log(search1);
     }
+
+    function formdata1() 
+    {
+    var query1= document.getElementById("query").value;
+    document.writeln("query for " + query1 + "<br>");
+
+    
+    //console.log(query1);
+    }
+
+
     </script>
 </head>
 </body>
