@@ -8,10 +8,15 @@
 
 <div class="topnav">
     <div class="search-container">
-        <form id = "myForm" onsubmit="processFunction()">
+        <!-- <form id = "myForm" onsubmit="processFunction()">
           <input type="text" placeholder="Search.." name="search" > 
           <button type="submit" onclick="javascript:processFunction()">Submit</button>
-        </form>
+        </form> -->
+
+        <form><br>
+          Search: <input type="text" id="search"/><br><br>
+          <input type="submit" value="Submit" onclick="formdata()"/><br>
+          </form>
       </div>
 </div> 
 <head>
@@ -92,13 +97,26 @@
       }
     }
 </style>
-<script>
+<!-- <script>
 
 function processFunction() {
-    console.log(document.getElementById("myForm").innerText + "EDF");
+   // console.log(document.getElementById("myForm").innerText + "EDF");
+
+   var xyz = document.getElementById("myForm").value ;
+   document.writeln(xyz);
 }
 
-</script>
+</script> -->
+
+    <script>
+    function formdata() 
+    {
+    var search1= document.getElementById("search").value;
+    document.writeln("searching for " + search1 + "<br>");
+    
+    console.log(search1);
+    }
+    </script>
 </head>
 </body>
 
