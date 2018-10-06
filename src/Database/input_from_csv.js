@@ -1,4 +1,6 @@
 const readline = require('readline');
+var path = require("path");
+var execute = require("./exec_query.js");
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -10,17 +12,14 @@ var str="";
 
 rl.question('Enter the table name and file name: (comma separated) ', (answer) => {
     var arr = answer.split(",");
-    table_name = arr[0];
-    file_name = arr[1];
-    console.log(table_name);
-    console.log(file_name);
-    
+    var table_name = arr[0];
+    var file_name = arr[1];
+    var direc = "'"+ path.resolve(__dirname)+"/"+ file_name + "'";
+
+    var command = "LOAD DATA LOCAL INFILE " + direc + " " + table_name + " FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES  TERMINATED BY '/N' IGNORE 1 LINES;";
    
-    var path = document.location.pathname;
-    console.log(path);
+   console.log(command);
 
-
-    //LOAD DATA LOCAL INFILE 'PATH' INTO TABLE TABLENAME FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES  TERMINATED BY '/N' IGNORE 1 LINES;
+    execute.exec_query(command);
     rl.close(); 
   });
-
