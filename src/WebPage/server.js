@@ -9,7 +9,7 @@ var server = http.createServer(function(request, response) {
             response.writeHead(200, {  
                 'Content-Type': 'text/plain'  
             });  
-            response.write("This is Test Message.");  
+            response.write("Go to /index.html");  
             response.end();  
             break;  
         case '/index.html':  
@@ -23,7 +23,7 @@ var server = http.createServer(function(request, response) {
                         'Content-Type': 'text/html'  
                     });  
                     response.write(data); 
-                    exec.exec_query(query1); 
+                    //exec.exec_query(query1); 
                     response.end();  
                 }  
             });  

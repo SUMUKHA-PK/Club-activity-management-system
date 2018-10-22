@@ -1,24 +1,7 @@
-
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
 
-<body>
-<h1 align="center">Details of all clubs and their activities in NITK</h1>
-
-<div class="topnav">
-    <div class="search-container">
-        <form><br>
-          Search: <input type="text" id="search"/><br><br>
-          <input type="submit" value="Submit" onclick="formdata()"/><br>
-        </form>
-
-        <form><br>
-          Query: <input type="text" id="query"/><br><br>
-          <input type="submit" value="Submit" onclick="formdata1()"/><br>
-        </form>
-      </div>
-</div> 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -96,29 +79,38 @@
         border: 1px solid #ccc;  
       }
     }
-</style>
-    <script>
-    function formdata() 
-    {
-    var search1= document.getElementById("search").value;
-    document.writeln("searching for " + search1 + "<br>");
-    
-    //console.log(search1);
-    }
-
-    function formdata1() 
-    {
-    var query1= document.getElementById("query").value;
-    document.writeln("query for " + query1 + "<br>");
-
-    
-    //console.log(query1);
-    }
-
-
-    </script>
+</style> 
 </head>
-</body>
 
+<body>
+    <h1 align="center">Details of all clubs and their activities in NITK</h1>
+    
+    <div class="topnav">
+        <div class="search-container">
+            <form action="#" method="post"><br>
+              Search: <input type="text" id="search"/><br><br>
+              <input type="button" value="Submit" onclick="formdata()"/><br>
+            </form>
+    
+            <form action="#" method="post"><br>
+              Query: <input type="text" id="query"/><br><br>
+              <input type="button" value="Submit" onclick="formdata1()"/><br>
+            </form>
+          </div>
+    </div> 
+    <script>
+      function formdata(){
+      var search1= document.getElementById("search").value;
+      document.writeln("searching for " + search1 + "<br>");
+      console.log(search1);
+      run_query("qe");
+      }
+      function formdata1(){
+      var query1= document.getElementById("query").value;
+      document.writeln("query for " + query1 + "<br>");
+      console.log(query1);
+      }
+    </script> 
+  
 </body>
 </html>
