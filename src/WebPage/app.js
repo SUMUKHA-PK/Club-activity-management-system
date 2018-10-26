@@ -15,8 +15,8 @@ app.get('/',function(req,res){
     
 app.get('/search',function(req,res){
 
-    execute.exec_query("SELECT * FROM " + JSON.stringify(req.query.key));
-    console.log(JSON.stringify(req.query.key));
+    execute.exec_query("SELECT * FROM " + JSON.stringify(req.query.key).replace(/\"/g, ""));
+    console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
 });
 
 var server=app.listen(3000,function(){
