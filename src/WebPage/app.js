@@ -28,8 +28,7 @@ app.post('/clicked_Student', (req, res) => {
     //const click = {clickTime: new Date()};
     //console.log("Clicked Student!");
     var data = execute.exec_query("SELECT * FROM Student");
-    //res.render('Elements',{page_title:"Customers - Node.js",data:data});
-    res.send(data)
+    res.render('Elements',{page_title:"Customers - Node.js",data:data});
 });
 
 app.post('/clicked_Customer', (req, res) => {
