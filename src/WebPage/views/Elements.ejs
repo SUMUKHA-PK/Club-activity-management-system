@@ -1,9 +1,5 @@
 <%- include layouts/header.ejs %>
-
         <div class="page-data">
-         <div class="data-btn">
-           <button onClick="addUser();">+ Add</button>
-         </div>
          <div class="data-table">
             <table border="1" cellpadding="7" cellspacing="7">
                 <tr>
@@ -28,11 +24,11 @@
                     <td><%=data[i].First_name%></td>
                     <td><%=data[i].Middle_name%></td>
                     <td><%=data[i].Last_name%></td>
-                    <td><%=data[i].Age></td>
-                    <td><%=data[i].Sex></td>
-                    <td><%=data[i].Department></td>
-                    <td><%=data[i].Designation_in_club></td>
-                    <td><%=data[i].SIG></td>
+                    <td><%=data[i].Age%></td>
+                    <td><%=data[i].Sex%></td>
+                    <td><%=data[i].Department%></td>
+                    <td><%=data[i].Designation_in_club%></td>
+                    <td><%=data[i].SIG%></td>
                 </tr>
             <% }
             
@@ -41,9 +37,6 @@
                     <td colspan="3">No user</td>
                  </tr>
             <% } %>
-                
-                              
-                
             </table>
          </div>
         </div>
