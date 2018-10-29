@@ -24,9 +24,27 @@ app.get('/search',function(req,res){
 // app.use(express.urlencoded());
 // app.use(express.methodOverride());
 
-app.post('/clicked', (req, res) => {
-    const click = {clickTime: new Date()};
-    console.log(click);
+app.post('/clicked_Student', (req, res) => {
+    //const click = {clickTime: new Date()};
+    //console.log("Clicked Student!");
+    var data = execute.exec_query("SELECT * FROM Student");
+    //res.render('Elements',{page_title:"Customers - Node.js",data:data});
+    res.send(data)
+});
+
+app.post('/clicked_Customer', (req, res) => {
+    //const click = {clickTime: new Date()};
+    console.log("Clicked Customer!");
+});
+
+app.post('/clicked_Events', (req, res) => {
+    //const click = {clickTime: new Date()};
+    console.log("Clicked Events!");
+});
+
+app.post('/clicked_Projects', (req, res) => {
+    //const click = {clickTime: new Date()};
+    console.log("Clicked Projects!");
 });
 
 var server=app.listen(3000,function(){

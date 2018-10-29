@@ -3,7 +3,7 @@ const student = document.getElementById('Student');
 student.addEventListener('click', function(e) {
   console.log('Student was recorded');
 
-  fetch('/clicked', {method: 'POST'})
+  fetch('/clicked_Student', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
         console.log('Student was recorded');
@@ -21,13 +21,13 @@ const customer = document.getElementById('Customer');
 customer.addEventListener('click', function(e) {
   console.log('Customer was recorded');
 
-  fetch('/clicked', {method: 'POST'})
+  fetch('/clicked_Customer', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
         console.log('Customer was recorded');
         return;
       }
-      throw new Error('Request failed.');
+      throw new Error;
     })
     .catch(function(error) {
       console.log(error);
@@ -39,7 +39,7 @@ const events = document.getElementById('Events');
 events.addEventListener('click', function(e) {
   console.log('Events was recorded');
 
-  fetch('/clicked', {method: 'POST'})
+  fetch('/clicked_Events', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
         console.log('Events was recorded');
@@ -57,7 +57,7 @@ const projects = document.getElementById('Projects');
 projects.addEventListener('click', function(e) {
   console.log('Project was recorded');
 
-  fetch('/clicked', {method: 'POST'})
+  fetch('/clicked_Projects', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
         console.log('Project was recorded');
