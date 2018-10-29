@@ -1,8 +1,6 @@
 var mysql = require('mysql');
 module.exports={
     exec_query: function(query){
-
-    
         var con = mysql.createConnection({
             host: "localhost",
             user: "lab",                                    //Account on local system
@@ -22,6 +20,8 @@ module.exports={
                 {
                   console.log(rows[i]);
                 }
+                console.log(typeof(rows))
+                console.log(JSON.parse(rows))
               }
               else
               {

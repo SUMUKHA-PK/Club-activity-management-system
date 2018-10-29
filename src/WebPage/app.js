@@ -1,8 +1,8 @@
 var express=require('express');
 var app=express();
-var execute = require('../Database/exec_query.js');
+var execute = require('../Database/query_runner.js');
 
-app.set('views',__dirname + './views');
+app.set('views',__dirname + '/views');
 app.use(express.static(__dirname));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
@@ -19,15 +19,11 @@ app.get('/search',function(req,res){
     console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
 });
 
-// app.use(express.logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded());
-// app.use(express.methodOverride());
-
 app.post('/clicked_Student', (req, res) => {
     //const click = {clickTime: new Date()};
     //console.log("Clicked Student!");
-    var data = execute.exec_query("SELECT * FROM Student");
+    data = execute.result("SELECT * FROM Student");
+    
     res.render('Elements',{page_title:"Customers - Node.js",data:data});
 });
 
