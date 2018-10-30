@@ -24,6 +24,7 @@ header {
 #cssmenu ul,
 #cssmenu li,
 #cssmenu span,
+#cssmenu button,
 #cssmenu a {
   border: 0;
   margin: 0;
