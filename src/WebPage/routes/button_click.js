@@ -1,20 +1,21 @@
 const student = document.getElementById('Student');
 
-student.addEventListener('click', function(e) {
-  console.log('Student was recorded');
+// student.addEventListener('click', function(e) {
+//   console.log('Student was recorded');
 
-  fetch('/clicked_Student', {method: 'POST'})
-    .then(function(response) {
-      if(response.ok) {
-        console.log('Student was recorded');
-        return;
-      }
-      throw new Error('Request failed.');
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-});
+//   fetch('/clicked_Student', {method: 'POST'})
+//     .then(function(response) {
+//       if(response.ok) {
+//         console.log(response.body)
+//         console.log('Student was recorded');
+//         return;
+//       }
+//       throw new Error('Request failed.');
+//     })
+//     .catch(function(error) {
+//       console.log(error);
+//     });
+// });
 
 const customer = document.getElementById('Customer');
 

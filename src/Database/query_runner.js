@@ -1,4 +1,8 @@
 var mysql = require('mysql');
+var EE = require('events')
+
+var e = new EE()
+
 exports.result = function(query){
     var con = mysql.createConnection({
         host: "localhost",
@@ -13,14 +17,9 @@ exports.result = function(query){
         
         con.query(query, function(err,rows,fields){
           if (err) throw err;
-          if(rows!="undefined")
+          if(rows!=undefined)
           {
-            for(i=0;i<rows.length;i++)
-            {
-              console.log(rows[i]);
-            }
-            console.log(typeof(rows))
-            console.log(JSON.parse(rows))
+            e.emit("rows", rows)
           }
           else
           {
@@ -33,5 +32,10 @@ exports.result = function(query){
             console.log("Connection terminated");
           });
       });
-    return (JSON.parse(rows));
+
+      return new Promise((resolve, reject)=>{
+            e.on("rows", (rows)=>{
+              resolve(rows)
+            })
+      })
 }

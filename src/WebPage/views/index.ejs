@@ -13,10 +13,53 @@
 </head>
 <body>
 
-<button id="Student">Student Data</button>
+<a id="Student"href="/clicked_Student">Student Data</a>
 <button id="Customer">Customer Data</button>
 <button id="Events">Event Data</button>
 <button id="Projects">Project Data</button>
+
+<div class="page-data">
+        <div class="data-table">
+           <table border="1" cellpadding="7" cellspacing="7">
+               <tr>
+                   <th width="50px">Roll_No</th>
+                   <th>First_name</th>
+                   <th>Middle_name</th>
+                   <th>Last_name</th>
+                   <th>Age</th>
+                   <th>Sex</th>
+                   <th>Department</th>
+                   <th>Designation_in_club</th>
+                   <th>SIG</th>
+                   <th width="120px">Action</th>
+               </tr>
+               <% console.log(data) %>
+                              
+               <% if(data.length){  %> 
+                               
+                <% for(var i = 0;i < data.length;i++) { %>
+                
+               <tr>
+                   <td><%=(i+1)%></td>
+                   <td><%=data[i].First_name%></td>
+                   <td><%=data[i].Middle_name%></td>
+                   <td><%=data[i].Last_name%></td>
+                   <td><%=data[i].Age%></td>
+                   <td><%=data[i].Sex%></td>
+                   <td><%=data[i].Department%></td>
+                   <td><%=data[i].Designation_in_club%></td>
+                   <td><%=data[i].SIG%></td>
+               </tr>
+           <% } %>
+           
+            <% }else{ %>
+                <tr>
+                   <td colspan="3">No user</td>
+                </tr>
+           <% } %>
+           </table>
+        </div>
+       </div>
 
 <div id='cssmenu'>
 <ul>
@@ -26,12 +69,14 @@
             <ul>
                <li><button id="c1">Convenor</button></li>
                 <li class='has-sub'><a href='#'><span>Executive Members</span></a>
-                     <ul>
+                    <form method = "POST" action = "/src/WebPage/routes/button_click.js">
+                    <ul>
                         <li><button id="s1">Compsoc</button></li>
                         <li><button id="s2">Diode</button></li>
                         <li><button id="s3">Piston</button></li>
                
                      </ul>
+                    </form> 
                  </li> 
             </ul>
          </li>

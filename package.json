@@ -7,5 +7,6 @@
     "mustache": "^3.0.0",
     "mysql": "^2.16.0",
     "pug": "^2.0.3"
-  }
+  },
+  "start" : "node src/WebPage/app.js"
 }
