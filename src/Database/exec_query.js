@@ -1,38 +1,36 @@
 var mysql = require('mysql');
-module.exports={
-    exec_query: function(query){
-        var con = mysql.createConnection({
-            host: "localhost",
-            user: "lab",                                    //Account on local system
-            password: "password",                           //Password of account on local system
-            database: "SCA"
-          });
-          
-          con.connect(function(err) {
-            if (err) throw err;
-            console.log("Connected!");
-            
-            con.query(query, function(err,rows,fields){
-              if (err) throw err;
-              if(rows!="undefined")
-              {
-                for(i=0;i<rows.length;i++)
-                {
-                  console.log(rows[i]);
-                }
-                console.log(typeof(rows))
-                console.log(JSON.parse(rows))
-              }
-              else
-              {
-                console.log("Query executed");
-              }
-            });
-          
-            con.end(function(err){
-                if(err) throw err;
-                console.log("Connection terminated");
-              });
-          });
+    
+function execute(data){
+console.log(oForm.elements["SIG"]);
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "lab",                                    //Account on local system
+  password: "password",                           //Password of account on local system
+  database: "SCA"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  
+  con.query(query, function(err,rows,fields){
+    if (err) throw err;
+    if(rows!="undefined")
+    {
+      for(i=0;i<rows.length;i++)
+      {
+        console.log(rows[i]);
+      }
     }
+    else
+    {
+      console.log("Query executed");
+    }
+  });
+
+  con.end(function(err){
+      if(err) throw err;
+      console.log("Connection terminated");
+    });
+});
 }
