@@ -13,12 +13,12 @@ var con = mysql.createConnection({
     
     var q1 = "CREATE TABLE Student(Roll_No varchar(13) NOT NULL, First_name varchar(15) NOT NULL, Middle_name varchar(15),Last_name varchar(15),"
              + "Age int(3), Sex varchar(2) NOT NULL, Department varchar(40) NOT NULL, Designation_in_club varchar(20) ," 
-             + "SIG varchar(15),PRIMARY KEY(Roll_no))";//, name varchar(45) AS (concat_ws(' ',First_name,Middle_name,Last_name) NOT NULL);";
+             + "Club varchar(15) NOT NULL,SIG varchar(15),PRIMARY KEY(Roll_no))";//, name varchar(45) AS (concat_ws(' ',First_name,Middle_name,Last_name) NOT NULL);";
 
     var q2 = "CREATE TABLE Club(Name varchar(20) NOT NULL, SIG_Head varchar(20) NOT NULL, No_of_Members int(4), Convenor varchar(20) NOT NULL, PRIMARY KEY(Name))";
 
-    var q3 = "CREATE TABLE Project(Project_ID varchar(10) NOT NULL, Discipline varchar(15) NOT NULL, Start_time varchar(25) NOT NULL,"
-             + "End_time varchar(25), Name varchar(25) NOT NULL, Supervising_club varchar(20) NOT NULL, No_students int(2), PRIMARY KEY(Project_ID))";
+    var q3 = "CREATE TABLE Project(Project_ID varchar(10) NOT NULL, Discipline varchar(15) NOT NULL, Start_date varchar(25) NOT NULL,"
+             + "End_date varchar(25), Name varchar(25) NOT NULL, Supervising_club varchar(20) NOT NULL,SIG varchar(20),Details varchar(3000), No_students int(2), PRIMARY KEY(Project_ID))";
 
     var q4 = "CREATE TABLE Event(Name varchar(10) NOT NULL, SIG_Involved varchar(20), Talks_conducted varchar(10), Workshops_conducted varchar(10),"
              + "Flagship_Events varchar(10),Date varchar(15), Club_Name varchar(20), PRIMARY KEY(Name), FOREIGN KEY(Club_name) REFERENCES Clubs(Name));";
