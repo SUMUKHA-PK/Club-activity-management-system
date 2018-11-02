@@ -19,10 +19,43 @@ app.get('/search',function(req,res){
     console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
 });
 
-app.get('/clicked_Student', async (req, res) => {
+
+// convenors 
+
+app.get('/ieee_con', async (req, res) => {
   
     try{
-        var data = await execute.result("SELECT * FROM Student");
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"IEEE\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ie_con', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"IE\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/acm_con', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"ACM\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/iste_con', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"ISTE\"");
     }
     catch(e){
         throw e
@@ -30,10 +63,33 @@ app.get('/clicked_Student', async (req, res) => {
     res.render('./index.ejs', {data})
 });
 
-app.get('/clicked_Student', async (req, res) => {
+/* EXECUTIVE MEMBERS */
+//executive members of ieee 
+
+app.get('/ieee_m1', async (req, res) => {
   
     try{
-        var data = await execute.result("SELECT * FROM Student");
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IEEE\" AND SIG = \"compsoc\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ieee_m2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IEEE\" AND SIG = \"diode\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ieee_m3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IEEE\" AND SIG = \"piston\"");
     }
     catch(e){
         throw e
@@ -41,10 +97,31 @@ app.get('/clicked_Student', async (req, res) => {
     res.render('./index.ejs', {data})
 });
 
-app.get('/clicked_Student', async (req, res) => {
+ //executive members of ie
+app.get('/ie_m1', async (req, res) => {
   
     try{
-        var data = await execute.result("SELECT * FROM Student");
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IE\" AND SIG = \"code\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ie_m2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IE\" AND SIG = \"gadget\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ie_m3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IE\" AND SIG = \"garage\"");
     }
     catch(e){
         throw e
@@ -52,6 +129,252 @@ app.get('/clicked_Student', async (req, res) => {
     res.render('./index.ejs', {data})
 });
 
+//executive members of acm
+app.get('/acm_m1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"ACM\" AND SIG = \"sanganitra\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/acm_m2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"ACM\" AND SIG = \"vidyut\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/acm_m3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IEEE\" AND SIG = \"yantrika\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+//executive members of ieee 
+app.get('/iste_m1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"ISTE\" AND SIG = \"Charge\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/iste_m2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IEEE\" AND SIG = \"crypt\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/iste_m3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"executive member\" AND Club =  \"IEEE\" AND SIG = \"clutch\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+
+/* PROJECTS */
+//projects of ieee 
+
+app.get('/ieee_p1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"IEEE\" AND SIG = \"compsoc\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ieee_p2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"IEEE\" AND SIG = \"diode\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ieee_p3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"IEEE\" AND SIG = \"piston\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+// projects of ie
+
+app.get('/ie_p1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"IE\" AND SIG = \"code\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ie_p2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"IE\" AND SIG = \"gadget\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/ie_p3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"IE\" AND SIG = \"garage\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+// projects of acm
+
+app.get('/acm_p1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"ACM\" AND SIG = \"sanganitra\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/acm_p2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"ACM\" AND SIG = \"vidyut\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/acm_p3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"ACM\" AND SIG = \"yantrika\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+// Projects of iste
+app.get('/iste_p1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"ISTE\" AND SIG = \"Charge\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/iste_p2', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"ISTE\" AND SIG = \"crypt\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+app.get('/iste_p3', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Projects WHERE Supervising_club =  \"ISTE\" AND SIG = \"clutch\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+/* EVENTS */
+
+//events of ieee 
+app.get('/ieee_e1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Events WHERE Club_Name =  \"IEEE\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+//events of ie 
+app.get('/ie_e1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Events WHERE Club_Name =  \"IE\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+//events of acm 
+app.get('/ieee_e1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Events WHERE Club_Name =  \"ACM\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
+
+//events of iste 
+app.get('/ieee_e1', async (req, res) => {
+  
+    try{
+        var data = await execute.result("SELECT * FROM Events WHERE Club_Name =  \"ISTE\"");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./index.ejs', {data})
+});
 
 
 

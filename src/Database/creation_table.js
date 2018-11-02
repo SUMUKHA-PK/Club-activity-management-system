@@ -17,23 +17,23 @@ var con = mysql.createConnection({
 
     var q2 = "CREATE TABLE Club(Name varchar(20) NOT NULL, SIG_Head varchar(20) NOT NULL, No_of_Members int(4), Convenor varchar(20) NOT NULL, PRIMARY KEY(Name))";
 
-    var q3 = "CREATE TABLE Project(Project_ID varchar(10) NOT NULL, Discipline varchar(15) NOT NULL, Start_date varchar(25) NOT NULL,"
-             + "End_date varchar(25), Name varchar(25) NOT NULL, Supervising_club varchar(20) NOT NULL,SIG varchar(20),Details varchar(3000), No_students int(2), PRIMARY KEY(Project_ID))";
+    var q3 = "CREATE TABLE Project(Project_ID varchar(10) NOT NULL, Discipline varchar(15) NOT NULL, Start_date date NOT NULL,"
+             + "End_date date, Name varchar(25) NOT NULL, Supervising_club varchar(20) NOT NULL,SIG varchar(20),Details varchar(3000), No_students int(2), PRIMARY KEY(Project_ID))";
 
     var q4 = "CREATE TABLE Event(Name varchar(10) NOT NULL, SIG_Involved varchar(20), Talks_conducted varchar(10), Workshops_conducted varchar(10),"
-             + "Flagship_Events varchar(10),Date varchar(15), Club_Name varchar(20), PRIMARY KEY(Name), FOREIGN KEY(Club_name) REFERENCES Clubs(Name));";
+             + "Flagship_Events varchar(10),Date date, Club_Name varchar(20), PRIMARY KEY(Name), FOREIGN KEY(Club_name) REFERENCES Clubs(Name))";
 
-    var q5 = "CREATE TABLE Works_On(Roll_No1 varchar(13) NOT NULL, Project_ID1 varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_No1, Project_ID1),"
-             + "FOREIGN KEY (Roll_No1) references Student(Roll_No), FOREIGN KEY (Project_ID1) references Projects(Project_ID));";
+    // var q5 = "CREATE TABLE Works_On(Roll_No1 varchar(13) NOT NULL, Project_ID1 varchar(10) NOT NULL, No_of_hours int(3), PRIMARY KEY(Roll_No1, Project_ID1),"
+    //          + "FOREIGN KEY (Roll_No1) references Student(Roll_No), FOREIGN KEY (Project_ID1) references Projects(Project_ID));";
 
-    var q6 = "CREATE TABLE Belongs_to(Roll_No varchar(13) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Roll_No,Name),  FOREIGN KEY (Roll_No) "
-             + "references Student(Roll_No), FOREIGN KEY (Name) references Clubs(Name));";
+    // var q6 = "CREATE TABLE Belongs_to(Roll_No varchar(13) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Roll_No,Name),  FOREIGN KEY (Roll_No) "
+    //          + "references Student(Roll_No), FOREIGN KEY (Name) references Clubs(Name));";
 
-    var q7 = "CREATE TABLE Conduct(Name varchar(20) NOT NULL,Event_name varchar(10) NOT NULL, PRIMARY KEY(Name,Event_name),  FOREIGN KEY (Name) "
-             + "references Clubs(Name), FOREIGN KEY (Event_name) references Events(Name));";
+    // var q7 = "CREATE TABLE Conduct(Name varchar(20) NOT NULL,Event_name varchar(10) NOT NULL, PRIMARY KEY(Name,Event_name),  FOREIGN KEY (Name) "
+    //          + "references Clubs(Name), FOREIGN KEY (Event_name) references Events(Name));";
 
-    var q8 = "CREATE TABLE Manage(Project_ID varchar(10) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Project_ID,Name),  FOREIGN KEY (Project_ID) "
-             + "references Projects(Project_ID), FOREIGN KEY (Name) references Clubs(Name));";
+    // var q8 = "CREATE TABLE Manage(Project_ID varchar(10) NOT NULL,Name varchar(20) NOT NULL, PRIMARY KEY(Project_ID,Name),  FOREIGN KEY (Project_ID) "
+    //          + "references Projects(Project_ID), FOREIGN KEY (Name) references Clubs(Name));";
 
 
 
