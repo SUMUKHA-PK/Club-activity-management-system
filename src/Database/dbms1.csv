@@ -1,21 +1,7 @@
-Project_ID,Discipline ,Start_time,End_time,Name,Supervising_Club,No_of_Students,details
-1,Electrical and Electronics,2017-09-15,2018-02-20,Voice Control using Bluetooth,IET,5,A circuit that responds to voice commands which are relayed over through a bluetooth connection was built. A voice input was given tot he phone which converts speech to text in an app. The string of text is then transmitted over a Bluetooth connection to a Bot that responds to specific commands.
-2,Electrical and Electronics,2017-09-15,2018-02-20,Smart Home Automation,IET,5,"The project aims to monitor the home appliances and measure power dissipation bty each individual appliance , making energy conservation easier. It provides an app to allow users/ consumers to fully take control of their energy usage and even allows scheduled control of appliances."
-3,Electrical and Electronics,2017-09-15,2018-02-20,Smart IOT Village,IET,5,"The primary Objective of this project is to design microcontroller based solutions for villages which can help their residents through data analysis and automation.The project includes a proof of concept of products which can have a meaningful impact on the lives of villagers , such as Solar Tracker, Cattle monitor and Interactive Schooling."
-4,Electrical and Electronics,2017-09-15,2018-02-20,Head Mouse,IET,5,Head mouse basically fills the role of a conventional mouse for immersive user experience and for the differenttly-abled. The circuit senses the orientation of head and this is fed to a microcontroller which manipulates the values to move the cursor on screen and for click functions.
-5,Electrical and Electronics,2017-09-15,2018-02-20,Advanced Line Follower,IET,5,The main aim of this project is to project is to generate an advanced line follower that uses the PID algorithm to smoothen the errors and to create a natural turn.
-6,Electrical and Electronics,2017-09-15,2018-02-20,Home Security System,IET,5,
-7,Electrical and Electronics,2017-09-15,2018-02-20,,,,
-8,Electrical and Electronics,2017-09-15,2018-02-20,,,,
-9,Electrical and Electronics,2017-09-15,2018-02-20,,,,
-10,,,,,,,
-11,,,,,,,
-12,,,,,,,
-13,,,,,,,
-14,,,,,,,
-15,,,,,,,
-16,,,,,,,
-17,,,,,,,
-18,,,,,,,
-19,,,,,,,
-20,,,,,,,
+Project_ID,Discipline ,Start_date,End_date,Name,Supervising_Club,SIG,Details,No_students
+1,Electrical and Electronics,2017-09-15,2018-02-20,Voice Control using Bluetooth,IE,gadget,A circuit that responds to voice commands which are relayed over through a bluetooth connection was built. A voice input was given tot he phone which converts speech to text in an app. The string of text is then transmitted over a Bluetooth connection to a Bot that responds to specific commands.,5
+2,Electrical and Electronics,2017-09-15,2018-02-20,Smart Home Automation,IE,gadget,"The project aims to monitor the home appliances and measure power dissipation bty each individual appliance , making energy conservation easier. It provides an app to allow users/ consumers to fully take control of their energy usage and even allows scheduled control of appliances.",5
+3,Electrical and Electronics,2017-09-15,2018-02-20,Smart IOT Village,IE,gadget,"The primary Objective of this project is to design microcontroller based solutions for villages which can help their residents through data analysis and automation.The project includes a proof of concept of products which can have a meaningful impact on the lives of villagers , such as Solar Tracker, Cattle monitor and Interactive Schooling.",5
+4,Electrical and Electronics,2017-09-15,2018-02-20,Head Mouse,IE,gadget,Head mouse basically fills the role of a conventional mouse for immersive user experience and for the differenttly-abled. The circuit senses the orientation of head and this is fed to a microcontroller which manipulates the values to move the cursor on screen and for click functions.,5
+5,Electrical and Electronics,2017-09-15,2018-02-20,Advanced Line Follower,IE,gadget,The main aim of this project is to project is to generate an advanced line follower that uses the PID algorithm to smoothen the errors and to create a natural turn.,5
+6,Electrical and Electronics,2017-09-15,2018-02-20,Home Security System,IE,gadget,blah blah,5
