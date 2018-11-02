@@ -19,16 +19,16 @@ app.get('/search',function(req,res){
     console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
 });
 
-app.get('/clicked_Student', async (req, res) => {
+// app.get('/clicked_Student', async (req, res) => {
   
-    try{
-        var data = await execute.result("SELECT * FROM Student");
-    }
-    catch(e){
-        throw e
-    }
-    res.render('./index.ejs', {data})
-});
+//     try{
+//         var data = await execute.result("SELECT * FROM Student");
+//     }
+//     catch(e){
+//         throw e
+//     }
+//     res.render('./index.ejs', {data})
+// });
 
 console.log(D);
 
