@@ -30,17 +30,40 @@
                    <th>Sex</th>
                    <th>Department</th>
                    <th>Designation_in_club</th>
+                   <th>Club</th>
                    <th>SIG</th>
-                   <th width="120px">Action</th>
-               </tr>
-               <% console.log(data) %>
+                   <th>Email</th>
+                   <th>Phone</th>
+                   <!-- <th width="120px">Action</th> -->   </tr>
+                <tr>
+                  <th width="50px">Project_ID</th>
+                   <th>Discipline</th>
+                   <th>Start_date</th>
+                   <th>End_date</th>
+                   <th>Name</th>
+                   <th>Supervising_club</th>
+                   <th>SIG</th>
+                   <th>Details</th>
+                   <th>No_students</th>
+                   
+                </tr> 
+
+                <tr>
+                  <th width="50px">Name_event</th>
+                   <th>SIG_Involved</th>
+                   <th>Talks</th>
+                   <th>Workshops</th>
+                   <th>Flagship_events</th>
+                   <th>Date</th>
+                   <th>Club_Name</th>
+                </tr>  
                               
-               <% if(data.length){  %> 
+               <% if(data.length ==12){  %> 
                                
                 <% for(var i = 0;i < data.length;i++) { %>
                 
                <tr>
-                   <td><%=(i+1)%></td>
+                   <td><%=data[i].Roll_No%></td>
                    <td><%=data[i].First_name%></td>
                    <td><%=data[i].Middle_name%></td>
                    <td><%=data[i].Last_name%></td>
@@ -48,9 +71,45 @@
                    <td><%=data[i].Sex%></td>
                    <td><%=data[i].Department%></td>
                    <td><%=data[i].Designation_in_club%></td>
+                   <td><%=data[i].Club%></td>
                    <td><%=data[i].SIG%></td>
+                   <td><%=data[i].Email%></td>
+                   <td><%=data[i].Phone%></td>
+               </tr>
+           <% }  %>
+
+           <% }else if(data.length == 9){ %>
+                  <% for(var i = 0;i < data.length;i++) { %>
+                
+               <tr>
+      
+                   <td><%=data[i].Project_ID%></td>
+                   <td><%=data[i].Discipline%></td>
+                   <td><%=data[i].Start_date%></td>
+                   <td><%=data[i].End_date%></td>
+                   <td><%=data[i].Name%></td>
+                   <td><%=data[i].Supervising_club%></td>
+                   <td><%=data[i].SIG%></td>
+                   <td><%=data[i].Details%></td>
+                   <td><%=data[i].No_students%></td>
                </tr>
            <% } %>
+
+            <% }else if(data.length == 7){ %>
+                  <% for(var i = 0;i < data.length;i++) { %>
+                
+               <tr>
+              
+                   <td><%=data[i].Name%></td>
+                   <td><%=data[i].SIG_Involved%></td>
+                   <td><%=data[i].Talks_conducted%></td>
+                   <td><%=data[i].Workshops_conducted%></td>
+                   <td><%=data[i].Flagship_Events%></td>
+                   <td><%=data[i].Date%></td>
+                   <td><%=data[i].Club_Name%></td>
+               </tr>
+           <% } %>
+
            
             <% }else{ %>
                 <tr>
@@ -60,6 +119,13 @@
            </table>
         </div>
        </div>
+
+
+
+
+
+
+
 
 <div id='cssmenu'>
 <ul>
