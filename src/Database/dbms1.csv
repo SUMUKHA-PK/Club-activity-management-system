@@ -1,7 +1,40 @@
-Project_ID,Discipline ,Start_date,End_date,Name,Supervising_Club,SIG,Details,No_students
-1,Electrical and Electronics,2017-09-15,2018-02-20,Voice Control using Bluetooth,IE,gadget,A circuit that responds to voice commands which are relayed over through a bluetooth connection was built. A voice input was given tot he phone which converts speech to text in an app. The string of text is then transmitted over a Bluetooth connection to a Bot that responds to specific commands.,5
-2,Electrical and Electronics,2017-09-15,2018-02-20,Smart Home Automation,IE,gadget,"The project aims to monitor the home appliances and measure power dissipation bty each individual appliance , making energy conservation easier. It provides an app to allow users/ consumers to fully take control of their energy usage and even allows scheduled control of appliances.",5
-3,Electrical and Electronics,2017-09-15,2018-02-20,Smart IOT Village,IE,gadget,"The primary Objective of this project is to design microcontroller based solutions for villages which can help their residents through data analysis and automation.The project includes a proof of concept of products which can have a meaningful impact on the lives of villagers , such as Solar Tracker, Cattle monitor and Interactive Schooling.",5
-4,Electrical and Electronics,2017-09-15,2018-02-20,Head Mouse,IE,gadget,Head mouse basically fills the role of a conventional mouse for immersive user experience and for the differenttly-abled. The circuit senses the orientation of head and this is fed to a microcontroller which manipulates the values to move the cursor on screen and for click functions.,5
-5,Electrical and Electronics,2017-09-15,2018-02-20,Advanced Line Follower,IE,gadget,The main aim of this project is to project is to generate an advanced line follower that uses the PID algorithm to smoothen the errors and to create a natural turn.,5
-6,Electrical and Electronics,2017-09-15,2018-02-20,Home Security System,IE,gadget,blah blah,5
+Name ,Phone,SMPs/Events Taken,KEP Attended/Taken
+Hitesh S,9611357283,"Analog(SMP), Music(SMP)",None
+K Rajath Bhatt,8762161892,"Analog(SMP), Music(SMP)",None
+Shantanu Sampath,8951662725,None,None
+Arvind,9789062906,SMP Coordinator,None
+Lavanya G,9483566831,IOT (SMP),None
+Divyasree D Pai T,9483207005,None,None
+Vignesh M,8197949393,None,None
+Jayanth Putta,9686696772,Convenor ACM,None
+Tanvi Girinath,9886220066,Chair ACM,None
+Sathwik GS ,8019320175,None,None
+Mansi Joisher,9611592550,"IOT(SMP), Hardwired (Event)",None
+Atharva Mhetar,7721828383,Computer Vision(SMP),None
+Sachin Hebbar,9738012838,"Analog(SMP), Hardwired (Event)",none
+Tejas R,9845762892,None,None
+Jenisha Arlyn DSouza,9449115224,Music (SMP),Machine Learning
+Gautam Manohar Bhat,9483761330,"IOT(SMP), Hardwired (Event)",None
+Amruth Nanjangud,8197104679,None,None
+Nandani Shakshi ,9071209633,Hardwired (Event),None
+Madhusudan S,9449782469,Computer Vision(SMP),None
+Nikhil,7760646723,"JavaScript(SMP), Hardwired (Event)",None
+Josh Pius,9686191635,None,None
+Avinash,9611029577,"Analog(SMP), Hardwired (Event)",None
+Sriya Srinivasan,9008819729,None,None
+Rahul R,7204829217,"Music (SMP), Hardwired (Event)",None
+Dwijesh Athrey K,7019180187,None,None
+Aji Sagar Razak,9496264595,None,None
+Abhinav Pavithran,8848779022,None,None
+G K K Teja,9581680845,None,None
+Abhi Kalra,7888812058,None,None
+Rahul Reji,8105843617,None,None
+Nikhil Kadam,9156573695,None,None
+Anirudh kanfade,9901075092,None,None
+Chaitali Shah,9448702573,None,None
+Vinay Kumar P,9449134597,None,None
+Mohanish Barapatre,7709230760,None,None
+Nithin R,6362728875,None,None
+Sourav K,9400303930,None,None
+Shivam Potdar,9511893050,IoT (SMP),None
+Anusha Misra,9686202708,None,None

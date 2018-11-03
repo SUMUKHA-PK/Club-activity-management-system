@@ -13,10 +13,17 @@ app.get('/',function(req,res){
     res.render('./index.ejs', {data  : []});
     });
     
-app.get('/search',function(req,res){
+app.get('/search',async (req,res)=>{
 
-    execute.exec_query("SELECT * FROM " + JSON.stringify(req.query.key).replace(/\"/g, ""));
-    console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
+    // execute.exec_query("SELECT * FROM " + JSON.stringify(req.query.key).replace(/\"/g, ""));
+    // console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
+    try{
+        var data = await execute.result("SELECT * FROM Student");
+    }
+    catch(e){
+        throw e
+    }
+    res.render('./Student.ejs', {data})
 });
 
 
