@@ -13,121 +13,6 @@
 </head>
 <body background="https://image.shutterstock.com/image-illustration/abstract-background-explosion-grey-lights-260nw-274022123.jpg">
 
-<a id="Student" href="/clicked_Student">Student Data</a>
-<a id="Customer">Customer Data</a>
-<a id="Events">Event Data</a>
-<a id="Projects">Project Data</a>
-
-<div class="page-data">
-        <div class="data-table">
-           <table border="1" cellpadding="7" cellspacing="7">
-               <tr>
-                   <th width="50px">Roll_No</th>
-                   <th>First_name</th>
-                   <th>Middle_name</th>
-                   <th>Last_name</th>
-                   <th>Age</th>
-                   <th>Sex</th>
-                   <th>Department</th>
-                   <th>Designation_in_club</th>
-                   <th>Club</th>
-                   <th>SIG</th>
-                   <th>Email</th>
-                   <th>Phone</th>
-                   <!-- <th width="120px">Action</th> -->   
-                 </tr>
-                <tr>
-                  <th width="50px">Project_ID</th>
-                   <th>Discipline</th>
-                   <th>Start_date</th>
-                   <th>End_date</th>
-                   <th>Name</th>
-                   <th>Supervising_club</th>
-                   <th>SIG</th>
-                   <th>Details</th>
-                   <th>No_students</th>
-                   
-                </tr> 
-
-                <tr>
-                  <th width="50px">Name_event</th>
-                   <th>SIG_Involved</th>
-                   <th>Talks</th>
-                   <th>Workshops</th>
-                   <th>Flagship_events</th>
-                   <th>Date</th>
-                   <th>Club_Name</th>
-                </tr>  
-                              
-               <% if(data.length ==12){  %> 
-                               
-                <% for(var i = 0;i < data.length;i++) { %>
-                
-               <tr>
-                   <td><%=data[i].Roll_No%></td>
-                   <td><%=data[i].First_name%></td>
-                   <td><%=data[i].Middle_name%></td>
-                   <td><%=data[i].Last_name%></td>
-                   <td><%=data[i].Age%></td>
-                   <td><%=data[i].Sex%></td>
-                   <td><%=data[i].Department%></td>
-                   <td><%=data[i].Designation_in_club%></td>
-                   <td><%=data[i].Club%></td>
-                   <td><%=data[i].SIG%></td>
-                   <td><%=data[i].Email%></td>
-                   <td><%=data[i].Phone%></td>
-               </tr>
-           <% }  %>
-
-           <% }else if(data.length == 9){ %>
-                  <% for(var i = 0;i < data.length;i++) { %>
-                
-               <tr>
-      
-                   <td><%=data[i].Project_ID%></td>
-                   <td><%=data[i].Discipline%></td>
-                   <td><%=data[i].Start_date%></td>
-                   <td><%=data[i].End_date%></td>
-                   <td><%=data[i].Name%></td>
-                   <td><%=data[i].Supervising_club%></td>
-                   <td><%=data[i].SIG%></td>
-                   <td><%=data[i].Details%></td>
-                   <td><%=data[i].No_students%></td>
-               </tr>
-           <% } %>
-
-            <% }else if(data.length == 7){ %>
-                  <% for(var i = 0;i < data.length;i++) { %>
-                
-               <tr>
-              
-                   <td><%=data[i].Name%></td>
-                   <td><%=data[i].SIG_Involved%></td>
-                   <td><%=data[i].Talks_conducted%></td>
-                   <td><%=data[i].Workshops_conducted%></td>
-                   <td><%=data[i].Flagship_Events%></td>
-                   <td><%=data[i].Date%></td>
-                   <td><%=data[i].Club_Name%></td>
-               </tr>
-           <% } %>
-
-           
-            <% }else{ %>
-                <tr>
-                   <td colspan="3">No user</td>
-                </tr>
-           <% } %>
-           </table>
-        </div>
-       </div>
-
-
-
-
-
-
-
-
 <div id='cssmenu'>
 <ul>
    <li class='active has-sub'><a href='#'><span>IEEE</span></a>
@@ -168,7 +53,7 @@
                <li class='has-sub'><a id="c2" href="/ie_con"><span>Convenor</span></a></li>
                <li class='has-sub'><a href='#'><span>Executive Members</span></a>
                      <ul>
-                        <li class='has-sub'><a id="nb1" href="/ie_m1"><span>>Code</span></a></li>
+                        <li class='has-sub'><a id="nb1" href="/ie_m1"><span>Code</span></a></li>
                         <li class='has-sub'><a id="nb2" href="/ie_m2"><span>Gadget</span></a></li>
                         <li class='has-sub'><a id="nb3" href="/ie_m3"><span>Garage</span></a></li>
                
@@ -218,8 +103,13 @@
        <ul>
          <li class='has-sub'><a href='#'><span>Members</span></a>
             <ul>
+<<<<<<< HEAD
                <li class='has-sub'><a id="c4" href="/iste_con"><span>Convenor</span></a></li>
                <li class='has-sub'><a><span>Executive Members</span></a>
+=======
+               <li><a id="c4" href="/iste_con"><span>Convenor</span></a></li>
+               <li class='has-sub'><a href='#'><span>Executive Members</span></a></li>
+>>>>>>> 154aea9f61342a37c47565c0c120faad571cebc4
                  <ul>
                    <li class='has-sub'><a id="nd1" href="/iste_m1"><span>Charge</span></a></li>
                    <li class='has-sub'><a id="nd2" href="/iste_m2"><span>Crypt</span></a></li>
@@ -245,7 +135,6 @@
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="typeahead.min.js" type="text/javascript"></script>
-<script src="../routes/a_click.js"></script>
 <input class="typeahead tt-query" spellcheck="false" autocomplete="off" name="typeahead" type="text" />
 </body>
 <html>

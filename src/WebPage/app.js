@@ -30,7 +30,7 @@ app.get('/ieee_con', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/ie_con', async (req, res) => {
   
@@ -40,7 +40,7 @@ app.get('/ie_con', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/acm_con', async (req, res) => {
   
@@ -50,7 +50,7 @@ app.get('/acm_con', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/iste_con', async (req, res) => {
   
@@ -60,7 +60,7 @@ app.get('/iste_con', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 
 /* EXECUTIVE MEMBERS */
@@ -74,7 +74,7 @@ app.get('/ieee_m1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/ieee_m2', async (req, res) => {
   
@@ -84,7 +84,7 @@ app.get('/ieee_m2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/ieee_m3', async (req, res) => {
   
@@ -94,7 +94,7 @@ app.get('/ieee_m3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 
  //executive members of ie
@@ -106,7 +106,7 @@ app.get('/ie_m1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/ie_m2', async (req, res) => {
   
@@ -116,7 +116,7 @@ app.get('/ie_m2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/ie_m3', async (req, res) => {
   
@@ -126,7 +126,7 @@ app.get('/ie_m3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 
 //executive members of acm
@@ -138,7 +138,7 @@ app.get('/acm_m1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/acm_m2', async (req, res) => {
   
@@ -148,7 +148,7 @@ app.get('/acm_m2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/acm_m3', async (req, res) => {
   
@@ -158,7 +158,7 @@ app.get('/acm_m3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 
 //executive members of ieee 
@@ -170,7 +170,7 @@ app.get('/iste_m1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/iste_m2', async (req, res) => {
   
@@ -180,7 +180,7 @@ app.get('/iste_m2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 app.get('/iste_m3', async (req, res) => {
   
@@ -190,7 +190,7 @@ app.get('/iste_m3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Student.ejs', {data})
 });
 
 
@@ -205,7 +205,7 @@ app.get('/ieee_p1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/ieee_p2', async (req, res) => {
   
@@ -215,7 +215,7 @@ app.get('/ieee_p2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/ieee_p3', async (req, res) => {
   
@@ -225,7 +225,7 @@ app.get('/ieee_p3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 
 // Project of ie
@@ -238,7 +238,7 @@ app.get('/ie_p1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/ie_p2', async (req, res) => {
   
@@ -248,7 +248,7 @@ app.get('/ie_p2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/ie_p3', async (req, res) => {
   
@@ -258,7 +258,7 @@ app.get('/ie_p3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 
 // Project of acm
@@ -271,7 +271,7 @@ app.get('/acm_p1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/acm_p2', async (req, res) => {
   
@@ -281,7 +281,7 @@ app.get('/acm_p2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/acm_p3', async (req, res) => {
   
@@ -291,7 +291,7 @@ app.get('/acm_p3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 
 // Project of iste
@@ -303,7 +303,7 @@ app.get('/iste_p1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/iste_p2', async (req, res) => {
   
@@ -313,7 +313,7 @@ app.get('/iste_p2', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 app.get('/iste_p3', async (req, res) => {
   
@@ -323,7 +323,7 @@ app.get('/iste_p3', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Project.ejs', {data})
 });
 
 /* Event */
@@ -337,7 +337,7 @@ app.get('/ieee_e1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Event.ejs', {data})
 });
 
 //Event of ie 
@@ -349,11 +349,11 @@ app.get('/ie_e1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Event.ejs', {data})
 });
 
 //Event of acm 
-app.get('/ieee_e1', async (req, res) => {
+app.get('/acm_e1', async (req, res) => {
   
     try{
         var data = await execute.result("SELECT * FROM Event WHERE Club_Name =  \"ACM\"");
@@ -361,11 +361,11 @@ app.get('/ieee_e1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Event.ejs', {data})
 });
 
 //Event of iste 
-app.get('/ieee_e1', async (req, res) => {
+app.get('/iste_e1', async (req, res) => {
   
     try{
         var data = await execute.result("SELECT * FROM Event WHERE Club_Name =  \"ISTE\"");
@@ -373,7 +373,7 @@ app.get('/ieee_e1', async (req, res) => {
     catch(e){
         throw e
     }
-    res.render('./index.ejs', {data})
+    res.render('./Event.ejs', {data})
 });
 
 
