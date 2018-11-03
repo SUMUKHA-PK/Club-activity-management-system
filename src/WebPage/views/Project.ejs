@@ -18,15 +18,17 @@
                                 
                  for(var i = 0;i < data.length;i++) { %>
                  
-                    <td><%=data[i].Project_ID%></td>
-                    <td><%=data[i].Discipline%></td>
-                    <td><%=data[i].Start_date%></td>
-                    <td><%=data[i].End_date%></td>
-                    <td><%=data[i].Name%></td>
-                    <td><%=data[i].Supervising_club%></td>
-                    <td><%=data[i].SIG%></td>
-                    <td><%=data[i].Details%></td>
-                    <td><%=data[i].No_students%></td>
+                    <tr>
+                        <td><%=data[i].Project_ID%></td>
+                        <td><%=data[i].Discipline%></td>
+                        <td><%=data[i].Start_date%></td>
+                        <td><%=data[i].End_date%></td>
+                        <td><%=data[i].Name%></td>
+                        <td><%=data[i].Supervising_club%></td>
+                        <td><%=data[i].SIG%></td>
+                        <td><%=data[i].Details%></td>
+                        <td><%=data[i].No_students%></td>
+                    </tr>
             <% }
             
              }else{ %>

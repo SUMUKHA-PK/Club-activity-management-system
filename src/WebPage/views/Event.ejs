@@ -3,7 +3,6 @@
          <div class="data-table">
             <table border="1" cellpadding="7" cellspacing="7">
                 <tr>
-                <th width="50px">Name_event</th>
                    <th>SIG_Involved</th>
                    <th>Talks</th>
                    <th>Workshops</th>
@@ -16,13 +15,14 @@
                                 
                  for(var i = 0;i < data.length;i++) { %>
                  
-                        <td><%=data[i].Name%></td>
-                        <td><%=data[i].SIG_Involved%></td>
-                        <td><%=data[i].Talks_conducted%></td>
-                        <td><%=data[i].Workshops_conducted%></td>
-                        <td><%=data[i].Flagship_Events%></td>
-                        <td><%=data[i].Date%></td>
-                        <td><%=data[i].Club_Name%></td>
+                <tr>
+                    <td><%=data[i].SIG_Involved%></td>
+                    <td><%=data[i].Talks_conducted%></td>
+                    <td><%=data[i].Workshops_conducted%></td>
+                    <td><%=data[i].Flagship_Events%></td>
+                    <td><%=data[i].Date%></td>
+                    <td><%=data[i].Club_Name%></td>
+                </tr>
             <% }
             
              }else{ %>

@@ -20,7 +20,7 @@
                 <% if(data.length){ 
                                 
                  for(var i = 0;i < data.length;i++) { %>
-                 
+                 <tr>
                     <td><%=data[i].Roll_No%></td>
                     <td><%=data[i].First_name%></td>
                     <td><%=data[i].Middle_name%></td>
@@ -33,6 +33,8 @@
                     <td><%=data[i].SIG%></td>
                     <td><%=data[i].Email%></td>
                     <td><%=data[i].Phone%></td>
+                 </tr>
+                    
             <% }
             
              }else{ %>

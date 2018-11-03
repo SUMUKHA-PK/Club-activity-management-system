@@ -315,7 +315,7 @@ app.get('/iste_p1', async (req, res) => {
 app.get('/iste_p2', async (req, res) => {
   
     try{
-        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"crypt\"");
+        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Crypt\"");
     }
     catch(e){
         throw e
@@ -325,7 +325,7 @@ app.get('/iste_p2', async (req, res) => {
 app.get('/iste_p3', async (req, res) => {
   
     try{
-        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"clutch\"");
+        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Clutch\"");
     }
     catch(e){
         throw e
