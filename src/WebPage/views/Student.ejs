@@ -11,18 +11,17 @@
                     <th>Sex</th>
                     <th>Department</th>
                     <th>Designation_in_club</th>
+                    <th>Club</th>
                     <th>SIG</th>
-                    <th width="120px">Action</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                 </tr>
 
-                <% console.log(data) %>
-                               
                 <% if(data.length){ 
                                 
                  for(var i = 0;i < data.length;i++) { %>
                  
-                <tr>
-                    <td><%=(i+1)%></td>
+                    <td><%=data[i].Roll_No%></td>
                     <td><%=data[i].First_name%></td>
                     <td><%=data[i].Middle_name%></td>
                     <td><%=data[i].Last_name%></td>
@@ -30,8 +29,10 @@
                     <td><%=data[i].Sex%></td>
                     <td><%=data[i].Department%></td>
                     <td><%=data[i].Designation_in_club%></td>
+                    <td><%=data[i].Club%></td>
                     <td><%=data[i].SIG%></td>
-                </tr>
+                    <td><%=data[i].Email%></td>
+                    <td><%=data[i].Phone%></td>
             <% }
             
              }else{ %>

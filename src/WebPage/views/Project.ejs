@@ -1,0 +1,41 @@
+<%- include layouts/header.ejs %>
+        <div class="page-data">
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">Project_ID</th>
+                   <th>Discipline</th>
+                   <th>Start_date</th>
+                   <th>End_date</th>
+                   <th>Name</th>
+                   <th>Supervising_club</th>
+                   <th>SIG</th>
+                   <th>Details</th>
+                   <th>No_students</th>
+                </tr>
+                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                    <td><%=data[i].Project_ID%></td>
+                    <td><%=data[i].Discipline%></td>
+                    <td><%=data[i].Start_date%></td>
+                    <td><%=data[i].End_date%></td>
+                    <td><%=data[i].Name%></td>
+                    <td><%=data[i].Supervising_club%></td>
+                    <td><%=data[i].SIG%></td>
+                    <td><%=data[i].Details%></td>
+                    <td><%=data[i].No_students%></td>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+            </table>
+         </div>
+        </div>
+        
+<%- include layouts/footer.ejs %>
