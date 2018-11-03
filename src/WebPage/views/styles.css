@@ -7,6 +7,10 @@ header {
     font-size: 35px;
     color: white;
 }
+body{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 #cssmenu
 {
