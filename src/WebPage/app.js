@@ -2,6 +2,9 @@ var express=require('express');
 var app=express();
 var execute = require('../Database/query_runner.js');
 
+var logged_in = require('./routes/logged_in')
+var update = require('./routes/update')
+
 var bodyParser = require('body-parser')
 
 app.set('views',__dirname + '/views');
@@ -11,6 +14,9 @@ app.engine('html', require('ejs').renderFile);
 
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use("/logged_in", logged_in)
+app.use("/update", update)
 
 app.get('/',function(req,res){
     res.render('./index.ejs', {data  : []});
@@ -205,7 +211,7 @@ app.get('/iste_m3', async (req, res) => {
 
 app.get('/login', async (req, res) => {
   
-    res.render('./login.html')
+    res.render('login.ejs')
 });
 
 /* Project */
