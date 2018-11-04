@@ -22,7 +22,7 @@ app.use("/update", update)
 app.get('/',function(req,res){
     res.render('./index.ejs', {data  : []});
     });
-    
+
 app.get('/search',async (req,res)=>{
 
     execute1.result("SELECT * FROM " + JSON.stringify(req.query.key).replace(/\"/g, ""));
@@ -30,10 +30,10 @@ app.get('/search',async (req,res)=>{
 });
 
 
-// convenors 
+// convenors
 
 app.get('/ieee_con', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"IEEE\"");
     }
@@ -43,7 +43,7 @@ app.get('/ieee_con', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/ie_con', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"IE\"");
     }
@@ -53,7 +53,7 @@ app.get('/ie_con', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/acm_con', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"ACM\"");
     }
@@ -63,7 +63,7 @@ app.get('/acm_con', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/iste_con', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club = \"convenor\" AND Club =  \"ISTE\"");
     }
@@ -74,10 +74,10 @@ app.get('/iste_con', async (req, res) => {
 });
 
 /* EXECUTIVE MEMBERS */
-//executive members of ieee 
+//executive members of ieee
 
 app.get('/ieee_m1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"compsoc\"");
     }
@@ -87,7 +87,7 @@ app.get('/ieee_m1', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/ieee_m2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"diode\"");
     }
@@ -97,7 +97,7 @@ app.get('/ieee_m2', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/ieee_m3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"piston\"");
     }
@@ -109,7 +109,7 @@ app.get('/ieee_m3', async (req, res) => {
 
  //executive members of ie
 app.get('/ie_m1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IE\" AND SIG = \"code\"");
     }
@@ -119,7 +119,7 @@ app.get('/ie_m1', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/ie_m2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IE\" AND SIG = \"gadget\"");
     }
@@ -129,7 +129,7 @@ app.get('/ie_m2', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/ie_m3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IE\" AND SIG = \"garage\"");
     }
@@ -141,7 +141,7 @@ app.get('/ie_m3', async (req, res) => {
 
 //executive members of acm
 app.get('/acm_m1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"ACM\" AND SIG = \"sanganitra\"");
     }
@@ -151,7 +151,7 @@ app.get('/acm_m1', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/acm_m2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"ACM\" AND SIG = \"vidyut\"");
     }
@@ -161,7 +161,7 @@ app.get('/acm_m2', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/acm_m3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"yantrika\"");
     }
@@ -171,9 +171,9 @@ app.get('/acm_m3', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 
-//executive members of ieee 
+//executive members of ieee
 app.get('/iste_m1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"ISTE\" AND SIG = \"Charge\"");
     }
@@ -183,7 +183,7 @@ app.get('/iste_m1', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/iste_m2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"crypt\"");
     }
@@ -193,7 +193,7 @@ app.get('/iste_m2', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 app.get('/iste_m3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"clutch\"");
     }
@@ -204,15 +204,15 @@ app.get('/iste_m3', async (req, res) => {
 });
 
 app.get('/login', async (req, res) => {
-  
+
     res.render('login.ejs')
 });
 
 /* Project */
-//Project of ieee 
+//Project of ieee
 
 app.get('/ieee_p1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"IEEE\" AND SIG = \"compsoc\"");
     }
@@ -222,7 +222,7 @@ app.get('/ieee_p1', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/ieee_p2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"IEEE\" AND SIG = \"diode\"");
     }
@@ -232,7 +232,7 @@ app.get('/ieee_p2', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/ieee_p3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"IEEE\" AND SIG = \"piston\"");
     }
@@ -245,7 +245,7 @@ app.get('/ieee_p3', async (req, res) => {
 // Project of ie
 
 app.get('/ie_p1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"IE\" AND SIG = \"code\"");
     }
@@ -255,7 +255,7 @@ app.get('/ie_p1', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/ie_p2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"IE\" AND SIG = \"gadget\"");
     }
@@ -265,7 +265,7 @@ app.get('/ie_p2', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/ie_p3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"IE\" AND SIG = \"garage\"");
     }
@@ -278,7 +278,7 @@ app.get('/ie_p3', async (req, res) => {
 // Project of acm
 
 app.get('/acm_p1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ACM\" AND SIG = \"sanganitra\"");
     }
@@ -288,7 +288,7 @@ app.get('/acm_p1', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/acm_p2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ACM\" AND SIG = \"vidyut\"");
     }
@@ -298,7 +298,7 @@ app.get('/acm_p2', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/acm_p3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ACM\" AND SIG = \"yantrika\"");
     }
@@ -310,7 +310,7 @@ app.get('/acm_p3', async (req, res) => {
 
 // Project of iste
 app.get('/iste_p1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Charge\"");
     }
@@ -320,7 +320,7 @@ app.get('/iste_p1', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/iste_p2', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Crypt\"");
     }
@@ -330,7 +330,7 @@ app.get('/iste_p2', async (req, res) => {
     res.render('./Project.ejs', {data})
 });
 app.get('/iste_p3', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Clutch\"");
     }
@@ -342,9 +342,9 @@ app.get('/iste_p3', async (req, res) => {
 
 /* Event */
 
-//Event of ieee 
+//Event of ieee
 app.get('/ieee_e1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Event WHERE Club_Name =  \"IEEE\"");
     }
@@ -354,9 +354,9 @@ app.get('/ieee_e1', async (req, res) => {
     res.render('./Event.ejs', {data})
 });
 
-//Event of ie 
+//Event of ie
 app.get('/ie_e1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Event WHERE Club_Name =  \"IE\"");
     }
@@ -366,9 +366,9 @@ app.get('/ie_e1', async (req, res) => {
     res.render('./Event.ejs', {data})
 });
 
-//Event of acm 
+//Event of acm
 app.get('/acm_e1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Event WHERE Club_Name =  \"ACM\"");
     }
@@ -378,9 +378,9 @@ app.get('/acm_e1', async (req, res) => {
     res.render('./Event.ejs', {data})
 });
 
-//Event of iste 
+//Event of iste
 app.get('/iste_e1', async (req, res) => {
-  
+
     try{
         var data = await execute.result("SELECT * FROM Event WHERE Club_Name =  \"ISTE\"");
     }
