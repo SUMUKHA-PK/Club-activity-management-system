@@ -1,6 +1,7 @@
 {
   "name": "demo",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "consolidate": "^0.15.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
@@ -8,5 +9,5 @@
     "mysql": "^2.16.0",
     "pug": "^2.0.3"
   },
-  "start" : "node src/WebPage/app.js"
+  "start": "node src/WebPage/app.js"
 }

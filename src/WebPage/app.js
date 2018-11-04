@@ -2,12 +2,15 @@ var express=require('express');
 var app=express();
 var execute = require('../Database/query_runner.js');
 
+var bodyParser = require('body-parser')
+
 app.set('views',__dirname + '/views');
 app.use(express.static(__dirname));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 app.use(express.static(__dirname + '/views'));
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/',function(req,res){
     res.render('./index.ejs', {data  : []});
@@ -200,6 +203,10 @@ app.get('/iste_m3', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 
+app.get('/login', async (req, res) => {
+  
+    res.render('./login.html')
+});
 
 /* Project */
 //Project of ieee 
@@ -383,7 +390,9 @@ app.get('/iste_e1', async (req, res) => {
     res.render('./Event.ejs', {data})
 });
 
-
+app.post("/", (req, res)=>{
+    console.log(req.body)
+})
 
 
 
