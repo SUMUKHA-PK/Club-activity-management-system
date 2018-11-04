@@ -171,11 +171,11 @@ app.get('/acm_m3', async (req, res) => {
     res.render('./Student.ejs', {data})
 });
 
-//executive members of ieee
+//executive members of iste
 app.get('/iste_m1', async (req, res) => {
 
     try{
-        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"ISTE\" AND SIG = \"Charge\"");
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"ISTE\" AND SIG = \"charge\"");
     }
     catch(e){
         throw e
@@ -185,7 +185,7 @@ app.get('/iste_m1', async (req, res) => {
 app.get('/iste_m2', async (req, res) => {
 
     try{
-        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"crypt\"");
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"ISTE\" AND SIG = \"crypt\"");
     }
     catch(e){
         throw e
@@ -195,7 +195,7 @@ app.get('/iste_m2', async (req, res) => {
 app.get('/iste_m3', async (req, res) => {
 
     try{
-        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"IEEE\" AND SIG = \"clutch\"");
+        var data = await execute.result("SELECT * FROM Student WHERE Designation_in_club != \"convenor\" AND Club =  \"ISTE\" AND SIG = \"clutch\"");
     }
     catch(e){
         throw e
@@ -312,7 +312,7 @@ app.get('/acm_p3', async (req, res) => {
 app.get('/iste_p1', async (req, res) => {
 
     try{
-        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Charge\"");
+        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"charge\"");
     }
     catch(e){
         throw e
@@ -322,7 +322,7 @@ app.get('/iste_p1', async (req, res) => {
 app.get('/iste_p2', async (req, res) => {
 
     try{
-        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Crypt\"");
+        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"crypt\"");
     }
     catch(e){
         throw e
@@ -332,7 +332,7 @@ app.get('/iste_p2', async (req, res) => {
 app.get('/iste_p3', async (req, res) => {
 
     try{
-        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"Clutch\"");
+        var data = await execute.result("SELECT * FROM Project WHERE Supervising_club =  \"ISTE\" AND SIG = \"clutch\"");
     }
     catch(e){
         throw e
