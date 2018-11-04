@@ -1,6 +1,7 @@
 var express=require('express');
 var app=express();
 var execute = require('../Database/query_runner.js');
+var execute1 = require('../Database/runs_query.js');
 
 var logged_in = require('./routes/logged_in')
 var update = require('./routes/update')
@@ -24,15 +25,8 @@ app.get('/',function(req,res){
     
 app.get('/search',async (req,res)=>{
 
-    // execute.exec_query("SELECT * FROM " + JSON.stringify(req.query.key).replace(/\"/g, ""));
-    // console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
-    try{
-        var data = await execute.result("SELECT * FROM Student");
-    }
-    catch(e){
-        throw e
-    }
-    res.render('./Student.ejs', {data})
+    execute1.result("SELECT * FROM " + JSON.stringify(req.query.key).replace(/\"/g, ""));
+    console.log(JSON.stringify(req.query.key).replace(/\"/g, ""));
 });
 
 
