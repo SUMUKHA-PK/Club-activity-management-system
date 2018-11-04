@@ -1,0 +1,29 @@
+Roll no,first name ,middle name,last name,Age,sex,department ,designation in club,club,SIG,Email,phone
+IEEE_1,Palak,,Singhal,20,F,CSE,executive member,IEEE,compsoc,abc@gmail.com,8050359377
+IEEE_2,Ashwin ,,Joisa,20,M,CSE,web master,IEEE,compsoc,str@gmail.com,8050359373
+IEEE_3,Praveen,Kumar,Gupta,20,M,CSE,executive member,IEEE,diode,free@gmil.com,8050353379
+IEEE_4,Hrishi,,Hiraskar,21,M,EEE,joint convenor,IEEE,diode,trees@gmail.com,8050356380
+IEEE_5,Sachit,,Krishnan,20,M,ECE,treasurer,IEEE,piston,archie@gmail.com,8050759381
+IEEE_6,Salman,,Shah,22,M,CSE,executive member,IEEE,piston,fdrst@gmail.com,8050459382
+IEEE_7,Chenna,,Keshava,20,M,IT,convenor,IEEE,compsoc,fdress@gmail.com,8050359383
+IE_1,Archana,Priyadarshani,Sahoo,20,F,CSE,executive member,IE,code,abc1@gmail.com,8050359377
+IE_2,Mishal ,,Shah,19,M,ME,web master,IE,gadget,abc2@gmail.com,8050359373
+IE_3,Shreyas,,Shankar,20,M,ECE,executive member,IE,garage,abc3@gmail.com,8050353379
+IE_4,Namrata ,,Ladda,19,F,IT,joint convenor,IE,code,abc5@gmail.com,8050356380
+IE_5,Keerthana,,Polkampally,19,F,IT,treasurer,IE,gadget,abc5@gmail.com,8050759381
+IE_6,Panchami,,Kamath,20,F,EEE,executive member,IE,garage,abc6@gmail.com,8050459382
+IE_7,Tarunya,,Rao,21,F,CH,convenor,IE,garage,abc7@gamil.com,8050359383
+ACM_1,Sharanya,,Kamath,20,F,CSE,executive member,ACM,sanganitra,abc@gmail.com,8050759381
+ACM_2,Govind ,,Jeevan,19,M,ME,web master,ACM,yantrika,abc3@gmail.com,8050459382
+ACM_3,Shweta ,,Ganiger,20,F,ECE,executive member,ACM,vidyut,abcfshf3@gmail.com,8050359383
+ACM_4,Tejas,,Ramesh,19,M,IT,joint convenor,ACM,sanganitra,fsrs@gmail.com,8050359377
+ACM_5,Gautam,,Ramakrishnan,19,M,IT,treasurer,ACM,yantrika,fstsr@gmail.com,8050359373
+ACM_6,Sanjana,,Krishnan,20,F,EEE,executive member,ACM,vidyut,smsf@gmail.com,8050353379
+ACM_7,Jayanth,,Putta,21,M,IT,convenor,ACM,sanganitra,gstydg@gmail.com,8050356380
+ISTE_1,Sidhart,,Kapoor,20,,CSE,executive member,ISTE,charge,agf@gmail.com,8050353379
+ISTE_2,Vishal,,Sinha,19,,ME,web master,ISTE,crypt,Gfsr@gmail.com,8050356380
+ISTE_3,Nihar,,Chitnis,20,,ECE,executive member,ISTE,clutch,gdgsft@gmail.com,8050759381
+ISTE_4,Nishant,,kumar,19,,IT,joint convenor,ISTE,charge,gtrsa@gmail.com,8050459382
+ISTE_5,Rajita,,Ghosal,19,,IT,treasurer,ISTE,crypt,gdsr@gmail.com,8050359383
+ISTE_6,Khanak,,Sharma,20,,EEE,executive member,ISTE,clutch,ahgh@gmail.com,8050759381
+ISTE_7,Mehak,,Arora,21,,IT,convenor,ISTE,charge,agt@gmail.com,8050459382
