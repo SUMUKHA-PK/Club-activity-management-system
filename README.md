@@ -1,4 +1,4 @@
-# DBMS-Lab
+# Club activity management system
 
 1. This is the repository maintaining the DBMS Lab files of semester 5, BTech.  
 
